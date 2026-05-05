@@ -1,0 +1,730 @@
+:root {
+  --tavern-bg: #f4ead2;
+  --tavern-surface: #fff8e8;
+  --tavern-elevated: #fffdf5;
+  --orange-flame: #f97316;
+  --murloc-teal: #2c8a92;
+  --gold-frame: #b8881e;
+  --scroll-ink: #1a1208;
+  --scroll-faded: #6a5a3c;
+  --rune-success: #2e8b57;
+  --rune-danger: #c0392b;
+  --tide-glow: rgba(44, 138, 146, 0.25);
+  --shadow-card: 0 18px 50px rgba(78, 51, 18, 0.16);
+  --shadow-treasure: 0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
+  --radius-frame: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tavern-bg: #111c29;
+    --tavern-surface: #1d2b3a;
+    --tavern-elevated: #26394a;
+    --orange-flame: #ff8a3d;
+    --murloc-teal: #3bb0b8;
+    --gold-frame: #d4a93a;
+    --scroll-ink: #f5e9c4;
+    --scroll-faded: #b7a983;
+    --rune-success: #4cc080;
+    --rune-danger: #e85a4a;
+    --tide-glow: rgba(44, 138, 146, 0.4);
+    --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.36);
+    --shadow-treasure: 0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
+  }
+}
+
+html.dark {
+  --tavern-bg: #111c29;
+  --tavern-surface: #1d2b3a;
+  --tavern-elevated: #26394a;
+  --orange-flame: #ff8a3d;
+  --murloc-teal: #3bb0b8;
+  --gold-frame: #d4a93a;
+  --scroll-ink: #f5e9c4;
+  --scroll-faded: #b7a983;
+  --rune-success: #4cc080;
+  --rune-danger: #e85a4a;
+  --tide-glow: rgba(44, 138, 146, 0.4);
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.36);
+  --shadow-treasure: 0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
+}
+
+html.light {
+  --tavern-bg: #f4ead2;
+  --tavern-surface: #fff8e8;
+  --tavern-elevated: #fffdf5;
+  --orange-flame: #f97316;
+  --murloc-teal: #2c8a92;
+  --gold-frame: #b8881e;
+  --scroll-ink: #1a1208;
+  --scroll-faded: #6a5a3c;
+  --rune-success: #2e8b57;
+  --rune-danger: #c0392b;
+  --tide-glow: rgba(44, 138, 146, 0.25);
+  --shadow-card: 0 18px 50px rgba(78, 51, 18, 0.16);
+  --shadow-treasure: 0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  color: var(--scroll-ink);
+  background:
+    linear-gradient(135deg, rgba(249, 115, 22, 0.08), transparent 34%),
+    linear-gradient(215deg, rgba(44, 138, 146, 0.12), transparent 40%),
+    var(--tavern-bg);
+}
+
+html.tavern body {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--gold-frame) 10%, transparent) 0 18px,
+      color-mix(in srgb, var(--orange-flame) 7%, transparent) 18px 36px,
+      transparent 36px 44px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--gold-frame) 10%, transparent) 0 1px,
+      transparent 1px 15px
+    );
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: var(--scroll-ink);
+  background:
+    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 34%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--tavern-bg) 88%, black 12%));
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 34%, transparent);
+  background: color-mix(in srgb, var(--tavern-surface) 90%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.site-nav__inner {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold-frame) 50%, transparent);
+}
+
+.brand__name {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.42rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.brand__note {
+  display: block;
+  color: var(--scroll-faded);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link,
+.theme-button {
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 34%, transparent);
+  background: color-mix(in srgb, var(--tavern-elevated) 78%, transparent);
+  color: var(--scroll-ink);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-link:hover,
+.theme-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--murloc-teal);
+  box-shadow: 0 10px 24px var(--tide-glow);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 30%, transparent);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--tavern-bg) 92%, transparent) 0 52%, transparent 76%),
+    url("./mascot/hero.webp") right 9% bottom 0 / min(48vw, 540px) auto no-repeat,
+    linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 38%),
+    linear-gradient(225deg, color-mix(in srgb, var(--murloc-teal) 20%, transparent), transparent 42%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 35%, transparent);
+  border-radius: var(--radius-frame);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(690px, 100%);
+  padding: 86px 0 74px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--murloc-teal) 38%, transparent);
+  background: color-mix(in srgb, var(--tavern-elevated) 76%, transparent);
+  color: var(--murloc-teal);
+  padding: 7px 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange-flame);
+  box-shadow: 0 0 18px var(--orange-flame);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+  color: var(--scroll-ink);
+}
+
+h1 {
+  max-width: 13ch;
+  margin-top: 22px;
+  font-size: clamp(3rem, 8vw, 6.4rem);
+  line-height: 0.92;
+}
+
+.hero__lead {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: var(--scroll-faded);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 12px 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: var(--orange-flame);
+  color: #fffdf5;
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--orange-flame) 35%, transparent);
+}
+
+.button--secondary {
+  border-color: color-mix(in srgb, var(--murloc-teal) 45%, transparent);
+  color: var(--murloc-teal);
+  background: color-mix(in srgb, var(--tavern-elevated) 72%, transparent);
+}
+
+.hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 650px;
+  margin-top: 36px;
+}
+
+.rune-tile {
+  min-height: 112px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
+  border-radius: var(--radius-frame);
+  background: color-mix(in srgb, var(--tavern-surface) 82%, transparent);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+}
+
+.rune-tile strong {
+  display: block;
+  color: var(--scroll-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.rune-tile span {
+  display: block;
+  margin-top: 8px;
+  color: var(--scroll-faded);
+  font-size: 0.9rem;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section--surface {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--tavern-surface) 56%, transparent), transparent),
+    color-mix(in srgb, var(--tavern-bg) 86%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--gold-frame) 24%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 24%, transparent);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+}
+
+.section-heading p {
+  max-width: 660px;
+  margin: 12px 0 0;
+  color: var(--scroll-faded);
+  font-size: 1.02rem;
+}
+
+.divider-rune {
+  height: 1px;
+  min-width: 180px;
+  background: linear-gradient(90deg, var(--gold-frame), transparent);
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.market-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
+  border-radius: var(--radius-frame);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--tavern-elevated) 82%, transparent), color-mix(in srgb, var(--tavern-surface) 92%, transparent));
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+}
+
+.market-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -38% 40%;
+  height: 140px;
+  rotate: -12deg;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--murloc-teal) 14%, transparent), transparent);
+}
+
+.market-card--focus {
+  border-color: var(--murloc-teal);
+  box-shadow: var(--shadow-treasure);
+}
+
+.market-card h3 {
+  font-size: 1.6rem;
+}
+
+.market-card p {
+  margin: 10px 0 0;
+  color: var(--scroll-faded);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  display: inline-flex;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 30%, transparent);
+  padding: 4px 8px;
+  color: var(--scroll-faded);
+  font-size: 0.78rem;
+}
+
+.price-table {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 38%, transparent);
+  border-radius: var(--radius-frame);
+  background: var(--tavern-surface);
+  box-shadow: var(--shadow-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 22%, transparent);
+  vertical-align: top;
+}
+
+th {
+  color: var(--scroll-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  background: color-mix(in srgb, var(--gold-frame) 12%, var(--tavern-surface));
+}
+
+td {
+  color: var(--scroll-faded);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.price {
+  color: var(--scroll-ink);
+  font-weight: 800;
+}
+
+.price--our {
+  color: var(--murloc-teal);
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.scroll-panel {
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
+  border-radius: var(--radius-frame);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--tavern-elevated) 78%, transparent), color-mix(in srgb, var(--tavern-surface) 95%, transparent));
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+}
+
+.scroll-panel h3 {
+  font-size: 1.45rem;
+}
+
+.scroll-panel p,
+.scroll-panel li {
+  color: var(--scroll-faded);
+}
+
+.scroll-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scroll-panel li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.scroll-panel li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange-flame);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--orange-flame) 50%, transparent);
+}
+
+.tariff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tariff {
+  min-height: 258px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
+  border-radius: var(--radius-frame);
+  background: var(--tavern-surface);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+.tariff--main {
+  border-color: var(--murloc-teal);
+  box-shadow: var(--shadow-treasure);
+}
+
+.tariff__label {
+  color: var(--murloc-teal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tariff h3 {
+  margin-top: 10px;
+}
+
+.tariff strong {
+  display: block;
+  margin-top: 14px;
+  color: var(--scroll-ink);
+  font-size: 1.55rem;
+}
+
+.tariff p {
+  margin: 12px 0 0;
+  color: var(--scroll-faded);
+}
+
+.quest-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.quest {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 34%, transparent);
+  border-radius: var(--radius-frame);
+  background: color-mix(in srgb, var(--tavern-surface) 84%, transparent);
+  padding: 16px;
+}
+
+.quest__mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--murloc-teal) 42%, transparent);
+  color: var(--murloc-teal);
+  font-weight: 900;
+}
+
+.quest h3 {
+  font-size: 1.05rem;
+}
+
+.quest p {
+  margin: 4px 0 0;
+  color: var(--scroll-faded);
+  font-size: 0.92rem;
+}
+
+.closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 44%, transparent);
+  border-radius: var(--radius-frame);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--orange-flame) 11%, transparent), transparent 36%),
+    var(--tavern-surface);
+  box-shadow: var(--shadow-treasure);
+  padding: 26px;
+}
+
+.closing img {
+  width: 136px;
+}
+
+.site-footer {
+  border-top: 1px solid color-mix(in srgb, var(--gold-frame) 30%, transparent);
+  padding: 26px 0 32px;
+  color: var(--scroll-faded);
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--orange-flame);
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 52%, transparent 100%),
+      url("./mascot/hero.webp") right -40px bottom -6px / 360px auto no-repeat,
+      linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 42%);
+  }
+
+  .hero__content {
+    padding-bottom: 310px;
+  }
+
+  .hero__metrics,
+  .map-grid,
+  .strategy-grid,
+  .tariff-grid,
+  .quest-list,
+  .closing {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .divider-rune {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .price-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 760px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .site-nav__inner {
+    min-height: 58px;
+  }
+
+  .brand__note,
+  .nav-link {
+    display: none;
+  }
+
+  .theme-button {
+    padding-inline: 12px;
+  }
+
+  .hero {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 56%, transparent 100%),
+      url("./mascot/hero.webp") center bottom -18px / 300px auto no-repeat,
+      linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 42%);
+  }
+
+  .hero::before {
+    inset: 12px;
+  }
+
+  .hero__content {
+    padding: 58px 0 260px;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 16vw, 4.8rem);
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .rune-tile,
+  .market-card,
+  .scroll-panel,
+  .tariff,
+  .closing {
+    padding: 18px;
+  }
+}
