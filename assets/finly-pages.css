@@ -11,7 +11,8 @@
   --rune-danger: #c0392b;
   --tide-glow: rgba(44, 138, 146, 0.25);
   --shadow-card: 0 18px 50px rgba(78, 51, 18, 0.16);
-  --shadow-treasure: 0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
+  --shadow-treasure:
+    0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
   --radius-frame: 4px;
 }
 
@@ -29,7 +30,8 @@
     --rune-danger: #e85a4a;
     --tide-glow: rgba(44, 138, 146, 0.4);
     --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.36);
-    --shadow-treasure: 0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
+    --shadow-treasure:
+      0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
   }
 }
 
@@ -46,7 +48,8 @@ html.dark {
   --rune-danger: #e85a4a;
   --tide-glow: rgba(44, 138, 146, 0.4);
   --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.36);
-  --shadow-treasure: 0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
+  --shadow-treasure:
+    0 0 0 1px rgba(212, 169, 58, 0.48), 0 22px 64px rgba(0, 0, 0, 0.38);
 }
 
 html.light {
@@ -62,7 +65,8 @@ html.light {
   --rune-danger: #c0392b;
   --tide-glow: rgba(44, 138, 146, 0.25);
   --shadow-card: 0 18px 50px rgba(78, 51, 18, 0.16);
-  --shadow-treasure: 0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
+  --shadow-treasure:
+    0 0 0 1px rgba(184, 136, 30, 0.48), 0 22px 64px rgba(184, 136, 30, 0.2);
 }
 
 * {
@@ -99,12 +103,27 @@ html.tavern body {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.5;
   color: var(--scroll-ink);
   background:
-    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 34%),
-    linear-gradient(180deg, transparent, color-mix(in srgb, var(--tavern-bg) 88%, black 12%));
+    radial-gradient(
+      circle at 20% 0%,
+      color-mix(in srgb, var(--gold-frame) 18%, transparent),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      color-mix(in srgb, var(--tavern-bg) 88%, black 12%)
+    );
 }
 
 a {
@@ -125,7 +144,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 34%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--gold-frame) 34%, transparent);
   background: color-mix(in srgb, var(--tavern-surface) 90%, transparent);
   backdrop-filter: blur(18px);
 }
@@ -186,7 +206,10 @@ img {
   font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .nav-link:hover,
@@ -200,12 +223,26 @@ img {
   position: relative;
   overflow: hidden;
   min-height: 620px;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 30%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--gold-frame) 30%, transparent);
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--tavern-bg) 92%, transparent) 0 52%, transparent 76%),
-    url("./mascot/hero.webp") right 9% bottom 0 / min(48vw, 540px) auto no-repeat,
-    linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 38%),
-    linear-gradient(225deg, color-mix(in srgb, var(--murloc-teal) 20%, transparent), transparent 42%);
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--tavern-bg) 92%, transparent) 0 52%,
+      transparent 76%
+    ),
+    url("./mascot/hero.webp") right 9% bottom 0 / min(48vw, 540px) auto
+      no-repeat,
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--gold-frame) 18%, transparent),
+      transparent 38%
+    ),
+    linear-gradient(
+      225deg,
+      color-mix(in srgb, var(--murloc-teal) 20%, transparent),
+      transparent 42%
+    );
 }
 
 .hero::before {
@@ -286,7 +323,10 @@ h1 {
   padding: 12px 18px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
 }
 
 .button:hover {
@@ -296,7 +336,8 @@ h1 {
 .button--primary {
   background: var(--orange-flame);
   color: #fffdf5;
-  box-shadow: 0 14px 32px color-mix(in srgb, var(--orange-flame) 35%, transparent);
+  box-shadow: 0 14px 32px
+    color-mix(in srgb, var(--orange-flame) 35%, transparent);
 }
 
 .button--secondary {
@@ -343,10 +384,15 @@ h1 {
 
 .section--surface {
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--tavern-surface) 56%, transparent), transparent),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--tavern-surface) 56%, transparent),
+      transparent
+    ),
     color-mix(in srgb, var(--tavern-bg) 86%, transparent);
   border-top: 1px solid color-mix(in srgb, var(--gold-frame) 24%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 24%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--gold-frame) 24%, transparent);
 }
 
 .section-heading {
@@ -388,8 +434,11 @@ h1 {
   min-height: 280px;
   border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
   border-radius: var(--radius-frame);
-  background:
-    linear-gradient(145deg, color-mix(in srgb, var(--tavern-elevated) 82%, transparent), color-mix(in srgb, var(--tavern-surface) 92%, transparent));
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--tavern-elevated) 82%, transparent),
+    color-mix(in srgb, var(--tavern-surface) 92%, transparent)
+  );
   box-shadow: var(--shadow-card);
   padding: 22px;
 }
@@ -400,7 +449,12 @@ h1 {
   inset: auto -20% -38% 40%;
   height: 140px;
   rotate: -12deg;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--murloc-teal) 14%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--murloc-teal) 14%, transparent),
+    transparent
+  );
 }
 
 .market-card--focus {
@@ -451,7 +505,8 @@ th,
 td {
   padding: 16px;
   text-align: left;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold-frame) 22%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--gold-frame) 22%, transparent);
   vertical-align: top;
 }
 
@@ -489,8 +544,11 @@ tbody tr:last-child td {
 .scroll-panel {
   border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
   border-radius: var(--radius-frame);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--tavern-elevated) 78%, transparent), color-mix(in srgb, var(--tavern-surface) 95%, transparent));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--tavern-elevated) 78%, transparent),
+    color-mix(in srgb, var(--tavern-surface) 95%, transparent)
+  );
   box-shadow: var(--shadow-card);
   padding: 22px;
 }
@@ -536,6 +594,8 @@ tbody tr:last-child td {
 }
 
 .tariff {
+  display: flex;
+  flex-direction: column;
   min-height: 258px;
   border: 1px solid color-mix(in srgb, var(--gold-frame) 42%, transparent);
   border-radius: var(--radius-frame);
@@ -556,6 +616,17 @@ tbody tr:last-child td {
   text-transform: uppercase;
 }
 
+.tariff__badge {
+  display: inline-flex;
+  margin-left: 6px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gold-frame) 34%, transparent);
+  padding: 3px 8px;
+  color: var(--scroll-faded);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .tariff h3 {
   margin-top: 10px;
 }
@@ -570,6 +641,19 @@ tbody tr:last-child td {
 .tariff p {
   margin: 12px 0 0;
   color: var(--scroll-faded);
+}
+
+.tariff__cta {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing-note {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: var(--scroll-faded);
+  text-align: center;
+  font-size: 0.96rem;
 }
 
 .quest-list {
@@ -618,7 +702,11 @@ tbody tr:last-child td {
   border: 1px solid color-mix(in srgb, var(--gold-frame) 44%, transparent);
   border-radius: var(--radius-frame);
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--orange-flame) 11%, transparent), transparent 36%),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--orange-flame) 11%, transparent),
+      transparent 36%
+    ),
     var(--tavern-surface);
   box-shadow: var(--shadow-treasure);
   padding: 26px;
@@ -643,9 +731,17 @@ tbody tr:last-child td {
   .hero {
     min-height: auto;
     background:
-      linear-gradient(180deg, color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 52%, transparent 100%),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 52%,
+        transparent 100%
+      ),
       url("./mascot/hero.webp") right -40px bottom -6px / 360px auto no-repeat,
-      linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 42%);
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--gold-frame) 18%, transparent),
+        transparent 42%
+      );
   }
 
   .hero__content {
@@ -699,9 +795,17 @@ tbody tr:last-child td {
 
   .hero {
     background:
-      linear-gradient(180deg, color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 56%, transparent 100%),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--tavern-bg) 96%, transparent) 0 56%,
+        transparent 100%
+      ),
       url("./mascot/hero.webp") center bottom -18px / 300px auto no-repeat,
-      linear-gradient(135deg, color-mix(in srgb, var(--gold-frame) 18%, transparent), transparent 42%);
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--gold-frame) 18%, transparent),
+        transparent 42%
+      );
   }
 
   .hero::before {
