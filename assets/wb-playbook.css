@@ -336,6 +336,10 @@ h3 {
   background: var(--paper-2);
 }
 
+.table-wrap--spaced {
+  margin-top: 18px;
+}
+
 table {
   width: 100%;
   min-width: 980px;
@@ -410,6 +414,10 @@ tbody tr:last-child td {
 
 .section--split .actions {
   width: 100%;
+}
+
+.actions--spaced {
+  margin-top: 18px;
 }
 
 .actions article strong {

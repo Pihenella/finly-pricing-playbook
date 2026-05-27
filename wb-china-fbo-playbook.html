@@ -32,11 +32,11 @@
         </div>
 
         <aside class="executive-card" aria-label="Ключевой вывод">
-          <span>Decision memo</span>
+          <span>Решение</span>
           <strong>Запускать можно: все 6 SKU подтверждены в Unit FBO.</strong>
           <p>
             Базовый сценарий даёт 58,9% ROI партии и рабочий возврат
-            капитала примерно за 1,9 месяца после старта продаж.
+            капитала на расчётный счёт примерно за 2,7 месяца.
           </p>
         </aside>
       </div>
@@ -58,9 +58,9 @@
           <p>по средней скорости продаж</p>
         </article>
         <article>
-          <span>Cash-payback</span>
-          <strong>~1,9 мес.</strong>
-          <p>с лагом выплаты WB</p>
+          <span>Возврат капитала</span>
+          <strong>~2,7 мес.</strong>
+          <p>по банковским поступлениям</p>
         </article>
       </section>
     </header>
@@ -68,7 +68,7 @@
     <main>
       <section class="section">
         <div class="section__heading">
-          <p class="kicker">Board view</p>
+          <p class="kicker">Суть</p>
           <h2>Суть плана</h2>
         </div>
         <div class="memo-grid">
@@ -83,8 +83,7 @@
             <h3>Как считаем прибыль</h3>
             <p>
               Среднемесячные продажи берём из Finly за 1 января — 26 мая 2026.
-              Чистую прибыль на единицу берём из <code>Unit FBO</code> по
-              прямому <code>gid=1955551978</code>.
+              Чистую прибыль на единицу берём из листа <code>Unit FBO</code>.
             </p>
           </article>
           <article>
@@ -106,7 +105,7 @@
           <div>
             <span>01</span>
             <strong>Закупка</strong>
-            <p>Cash-out 1 998 270 ₽</p>
+            <p>Исходящий платёж 1 998 270 ₽</p>
           </div>
           <div>
             <span>02</span>
@@ -128,24 +127,131 @@
           <article>
             <span>Без лага выплат</span>
             <strong>~1,6 мес.</strong>
-            <p>когда продажи уже покрывают исходный cash-out</p>
+            <p>когда продажи уже покрывают исходящий платёж</p>
           </article>
           <article>
-            <span>С лагом WB</span>
-            <strong>~1,9 мес.</strong>
-            <p>с учётом недельного отчёта и банковского окна</p>
+            <span>На расчётном счёте</span>
+            <strong>~2,7 мес.</strong>
+            <p>с учётом отчёта, ожидания доступности и перевода</p>
           </article>
           <article>
-            <span>Полный выход партии</span>
-            <strong>~4,3 мес.</strong>
-            <p>по самому медленному SKU и финальной выплате</p>
+            <span>Полный выход в деньги</span>
+            <strong>~5,2 мес.</strong>
+            <p>последние продажи плюс лаг выплаты WB</p>
           </article>
         </div>
       </section>
 
       <section class="section">
         <div class="section__heading">
-          <p class="kicker">SKU economics</p>
+          <p class="kicker">Календарь выплат WB</p>
+          <h2>Когда деньги придут на счёт</h2>
+        </div>
+        <div class="memo-grid">
+          <article>
+            <h3>Баланс — ещё не деньги</h3>
+            <p>
+              WB показывает начисления в балансе, но к выводу доступна сумма,
+              которая прошла еженедельный отчёт и стала доступной по правилам
+              выплат.
+            </p>
+          </article>
+          <article>
+            <h3>Бесплатный вывод</h3>
+            <p>
+              Практический план: неделя продажи → еженедельный отчёт → около
+              трёх недель ожидания доступности → до 5 рабочих дней на перевод.
+            </p>
+          </article>
+          <article>
+            <h3>Платное ускорение</h3>
+            <p>
+              <code>Вывести сейчас</code> стоит 4,3% от суммы к выводу. Это
+              инструмент против кассового разрыва, а не базовая модель.
+            </p>
+          </article>
+        </div>
+
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Когда поступит</th>
+                <th>Продано</th>
+                <th>Вернётся себестоимости</th>
+                <th>Придёт прибыли</th>
+                <th>Всего придёт</th>
+                <th>Накопительно</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>0–30 дней</strong><span>период ожидания</span></td>
+                <td>0</td>
+                <td>0 ₽</td>
+                <td>0 ₽</td>
+                <td>0 ₽</td>
+                <td>0 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>31–60 дней</strong><span>первые выплаты</span></td>
+                <td>243</td>
+                <td>965 583 ₽</td>
+                <td>479 922 ₽</td>
+                <td>1 445 505 ₽</td>
+                <td>1 445 505 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>61–90 дней</strong><span>окупаем закупку</span></td>
+                <td>126</td>
+                <td>469 542 ₽</td>
+                <td>293 970 ₽</td>
+                <td>763 512 ₽</td>
+                <td>2 209 018 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>91–120 дней</strong><span>основная прибыль</span></td>
+                <td>129</td>
+                <td>480 196 ₽</td>
+                <td>304 405 ₽</td>
+                <td>784 601 ₽</td>
+                <td>2 993 618 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>121–155 дней</strong><span>закрытие хвоста</span></td>
+                <td>22</td>
+                <td>82 949 ₽</td>
+                <td>97 829 ₽</td>
+                <td>180 777 ₽</td>
+                <td>3 174 395 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Вложенные 1 998 270 ₽ покрываются банковскими поступлениями примерно
+          на 12-й неделе после старта продаж. Если WB разместит отчёт ближе к
+          пределу в 7 календарных дней, добавляйте к плану ещё до одной недели.
+        </p>
+        <div class="actions actions--spaced">
+          <article>
+            <strong>Планировать от денег</strong>
+            <p>Для закупок используем не график продаж и не баланс, а сумму <code>Можно вывести</code> и банковские поступления.</p>
+          </article>
+          <article>
+            <strong>Держать буфер</strong>
+            <p>Минимальный запас ликвидности — 5 недель рекламы, операционных платежей и перезаказа быстрых SKU.</p>
+          </article>
+          <article>
+            <strong>Ускорять точечно</strong>
+            <p><code>Вывести сейчас</code> имеет смысл, только если ранний перезаказ заработает больше комиссии 4,3%.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__heading">
+          <p class="kicker">Экономика SKU</p>
           <h2>Прибыль по артикулам</h2>
         </div>
         <div class="table-wrap">
@@ -227,8 +333,7 @@
           </table>
         </div>
         <p class="note">
-          <code>WIB-271</code> подтверждён на листе <code>Unit FBO</code> по прямому
-          <code>gid=1955551978</code>. После пересчёта главный вклад в прибыль
+          <code>WIB-271</code> подтверждён на листе <code>Unit FBO</code>. После пересчёта главный вклад в прибыль
           партии даёт <code>WIB-270</code>: 409 840 ₽ и 126,3% ROI.
         </p>
       </section>
@@ -243,8 +348,8 @@
             <span>30 дней</span>
             <h3>Запуск без потери контроля</h3>
             <p>
-              Зафиксировать <code>gid=1955551978</code>, завести новую
-              себестоимость в Finly, поставить weekly dashboard по продажам,
+              Зафиксировать лист <code>Unit FBO</code>, завести новую
+              себестоимость в Finly, поставить еженедельный дашборд по продажам,
               выкупам, ДРР и прибыли на единицу.
             </p>
           </article>
@@ -293,9 +398,10 @@
       <p>
         Источники: Google Sheets <code>Китай</code> и <a href="https://docs.google.com/spreadsheets/d/13VOHfbCMYAx8Cvin_78pO91vCMlZO3YT9ISShktXmEQ/edit?gid=1955551978#gid=1955551978"><code>Unit FBO</code></a>, Finly XLSX за 1 января —
         26 мая 2026, официальные материалы WB Seller по
+        <a href="https://seller.wildberries.ru/instructions/ru/kz/material/how-to-transfer-money-to-your-bank-account">выводу денег</a>,
         <a href="https://seller.wildberries.ru/instructions/ru/by/material/how-to-read-general-financial-report?recommended=true">отчётам реализации</a>
-        и
-        <a href="https://seller.wildberries.ru/instructions/ru/ru/material/price-reporting-and-calculations">расчётам</a>.
+        <a href="https://seller.wildberries.ru/instructions/ru/am/material/withdraw-now-service">досрочному выводу</a>
+        и <a href="https://seller.wildberries.ru/instructions/ru/am/material/promotion-withdrawal-request-any-day-without-commission">выводу в любой день</a>.
       </p>
     </footer>
   </body>
