@@ -36,7 +36,8 @@
           <strong>Запускать можно: все 6 SKU подтверждены в Unit FBO.</strong>
           <p>
             Базовый сценарий даёт 58,9% ROI партии и рабочий возврат
-            капитала на расчётный счёт примерно за 2,7 месяца.
+            капитала на расчётный счёт примерно за 2,7 месяца. Быстрая доставка
+            30 дней стоит около +6% к себестоимости.
           </p>
         </aside>
       </div>
@@ -251,6 +252,402 @@
 
       <section class="section">
         <div class="section__heading">
+          <p class="kicker">Китайский перезаказ</p>
+          <h2>Когда заказывать следующую партию</h2>
+        </div>
+        <div class="memo-grid">
+          <article>
+            <h3>Схема 30/70</h3>
+            <p>
+              По текущей партии уже оплачено 599 481 ₽. Оставшиеся 1 398 789 ₽
+              нужно отдать заводу, когда товар будет у нас на руках.
+            </p>
+          </article>
+          <article>
+            <h3>45 или 30 дней</h3>
+            <p>
+              База — 45 дней и приход около 11 июля 2026. Быстрый вариант —
+              30 дней, но он добавляет около 6% к себестоимости.
+            </p>
+          </article>
+          <article>
+            <h3>Риск по наличию</h3>
+            <p>
+              Вся партия закрывает около 59 дней продаж, но <code>WIB-276</code>
+              закрывает только 28 дней. Быстрая доставка сдвигает дедлайн
+              перезаказа ближе к приходу товара.
+            </p>
+          </article>
+        </div>
+
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Артикул</th>
+                <th>Запаса хватит</th>
+                <th>Дедлайн 45 дней</th>
+                <th>Дедлайн 30 дней</th>
+                <th>Решение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="risk-row">
+                <td><strong>WIB-276</strong><span>Набор 160</span></td>
+                <td>~28 дней</td>
+                <td>23–24 июня 2026</td>
+                <td>8 июля 2026</td>
+                <td>быстрый SKU; не ждать продаж до нуля</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-250</strong><span>Набор 219</span></td>
+                <td>~71 день</td>
+                <td>5–6 августа 2026</td>
+                <td>20 августа 2026</td>
+                <td>держать в активном пополнении</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-277</strong><span>Набор 169</span></td>
+                <td>~86 дней</td>
+                <td>21 августа 2026</td>
+                <td>5 сентября 2026</td>
+                <td>пополнять обычным циклом</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-271</strong><span>Набор 218</span></td>
+                <td>~89 дней</td>
+                <td>23–24 августа 2026</td>
+                <td>7 сентября 2026</td>
+                <td>пополнять обычным циклом</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-233</strong><span>Набор 58</span></td>
+                <td>~94 дня</td>
+                <td>28–29 августа 2026</td>
+                <td>12 сентября 2026</td>
+                <td>не увеличивать без пересмотра цены</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-270</strong><span>Набор 300</span></td>
+                <td>~118 дней</td>
+                <td>21–22 сентября 2026</td>
+                <td>6 октября 2026</td>
+                <td>докупать после подтверждения скорости</td>
+              </tr>
+              <tr class="leader-row">
+                <td><strong>Вся партия</strong><span>среднее по 6 SKU</span></td>
+                <td>~59 дней</td>
+                <td>25 июля 2026</td>
+                <td>9 августа 2026</td>
+                <td>среднее скрывает риск по <code>WIB-276</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Даты считаются от сценария, где первая партия приходит 11 июля 2026.
+          Если текущую партию тоже вести за 30 дней, она приходит около
+          26 июня 2026, но дедлайн <code>WIB-276</code> всё равно остаётся
+          около 23–24 июня.
+        </p>
+
+        <p class="note">
+          Стандартная доставка 45 дней: страхуем продажи на весь срок пути.
+        </p>
+
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Артикул</th>
+                <th>Минимум на 45 дней</th>
+                <th>Сумма закупки</th>
+                <th>30% аванс</th>
+                <th>70% при получении</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>WIB-276</strong></td>
+                <td>194 шт.</td>
+                <td>819 521 ₽</td>
+                <td>245 856 ₽</td>
+                <td>573 665 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-277</strong></td>
+                <td>42 шт.</td>
+                <td>214 358 ₽</td>
+                <td>64 307 ₽</td>
+                <td>150 051 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-250</strong></td>
+                <td>51 шт.</td>
+                <td>183 817 ₽</td>
+                <td>55 145 ₽</td>
+                <td>128 672 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-233</strong></td>
+                <td>39 шт.</td>
+                <td>72 535 ₽</td>
+                <td>21 761 ₽</td>
+                <td>50 774 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-271</strong></td>
+                <td>41 шт.</td>
+                <td>164 707 ₽</td>
+                <td>49 412 ₽</td>
+                <td>115 295 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-270</strong></td>
+                <td>31 шт.</td>
+                <td>125 759 ₽</td>
+                <td>37 728 ₽</td>
+                <td>88 031 ₽</td>
+              </tr>
+              <tr class="leader-row">
+                <td><strong>Итого</strong></td>
+                <td>398 шт.</td>
+                <td>1 580 697 ₽</td>
+                <td>474 209 ₽</td>
+                <td>1 106 488 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Быстрая доставка 30 дней: закупаем меньший страховой объём, но
+          добавляем 6% к себестоимости.
+        </p>
+
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Артикул</th>
+                <th>Минимум на 30 дней</th>
+                <th>Сумма с +6%</th>
+                <th>30% аванс</th>
+                <th>70% при получении</th>
+                <th>Удорожание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>WIB-276</strong></td>
+                <td>129 шт.</td>
+                <td>577 635 ₽</td>
+                <td>173 290 ₽</td>
+                <td>404 345 ₽</td>
+                <td>32 696 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-277</strong></td>
+                <td>28 шт.</td>
+                <td>151 479 ₽</td>
+                <td>45 444 ₽</td>
+                <td>106 035 ₽</td>
+                <td>8 574 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-250</strong></td>
+                <td>34 шт.</td>
+                <td>129 897 ₽</td>
+                <td>38 969 ₽</td>
+                <td>90 928 ₽</td>
+                <td>7 353 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-233</strong></td>
+                <td>26 шт.</td>
+                <td>51 258 ₽</td>
+                <td>15 377 ₽</td>
+                <td>35 881 ₽</td>
+                <td>2 901 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-271</strong></td>
+                <td>28 шт.</td>
+                <td>119 232 ₽</td>
+                <td>35 770 ₽</td>
+                <td>83 462 ₽</td>
+                <td>6 749 ₽</td>
+              </tr>
+              <tr>
+                <td><strong>WIB-270</strong></td>
+                <td>21 шт.</td>
+                <td>90 303 ₽</td>
+                <td>27 091 ₽</td>
+                <td>63 212 ₽</td>
+                <td>5 112 ₽</td>
+              </tr>
+              <tr class="leader-row">
+                <td><strong>Итого</strong></td>
+                <td>266 шт.</td>
+                <td>1 119 804 ₽</td>
+                <td>335 941 ₽</td>
+                <td>783 863 ₽</td>
+                <td>63 385 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Сценарий</th>
+                <th>Закупка</th>
+                <th>Будущие платежи</th>
+                <th>Будущие выплаты Finly</th>
+                <th>Разрыв при 0 ₽ на р/с</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Стандарт 45 дней</strong></td>
+                <td>398 шт. / 1 580 697 ₽</td>
+                <td>2 979 486 ₽</td>
+                <td>731 008 ₽</td>
+                <td>2 248 478 ₽</td>
+              </tr>
+              <tr class="leader-row">
+                <td><strong>Быстро 30 дней</strong><span>себестоимость +6%</span></td>
+                <td>266 шт. / 1 119 804 ₽</td>
+                <td>2 518 593 ₽</td>
+                <td>731 008 ₽</td>
+                <td>1 787 585 ₽</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="actions actions--spaced">
+          <article>
+            <strong>Стандарт 45 дней</strong>
+            <p>
+              Аванс повторного заказа — 474 209 ₽, доплата 70% — 1 106 488 ₽.
+              Разрыв до второго прихода — 2 248 478 ₽.
+            </p>
+          </article>
+          <article>
+            <strong>Быстро 30 дней</strong>
+            <p>
+              Аванс повторного заказа — 335 941 ₽, доплата 70% — 783 863 ₽.
+              Цена скорости — 63 385 ₽ маржи.
+            </p>
+          </article>
+          <article>
+            <strong>Текущая партия быстро</strong>
+            <p>
+              Если ускорять первую партию, к себестоимости добавится 119 896 ₽,
+              а доплата после уже внесённых 30% вырастет до 1 518 685 ₽.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--ink">
+        <div class="section__heading">
+          <p class="kicker">Finly cash view</p>
+          <h2>Что видно по отчётам Finly</h2>
+        </div>
+        <div class="cash-grid">
+          <article>
+            <span>Баланс WB</span>
+            <strong>14 336 021 ₽</strong>
+            <p>AID Tools — 13 768 669 ₽, AID Official — 567 352 ₽</p>
+          </article>
+          <article>
+            <span>Локальные отчёты</span>
+            <strong>3 360 942 ₽</strong>
+            <p>сумма «К выплате на р/с» в найденных XLSX Finly</p>
+          </article>
+          <article>
+            <span>Нужно сверить</span>
+            <strong>10 975 079 ₽</strong>
+            <p>разница между балансом WB и найденными отчётами</p>
+          </article>
+        </div>
+        <div class="table-wrap table-wrap--spaced">
+          <table>
+            <thead>
+              <tr>
+                <th>Магазин</th>
+                <th>Дата в Finly</th>
+                <th>К выплате на р/с</th>
+                <th>Ориентир прихода в банк</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>AID Official</strong></td>
+                <td>10 апреля 2026</td>
+                <td>578 029 ₽</td>
+                <td>до 8 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Official</strong></td>
+                <td>18 апреля 2026</td>
+                <td>413 692 ₽</td>
+                <td>до 15 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Tools</strong></td>
+                <td>23 апреля 2026</td>
+                <td>774 235 ₽</td>
+                <td>до 21 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Tools</strong></td>
+                <td>29 апреля 2026</td>
+                <td>863 978 ₽</td>
+                <td>до 27 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Tools</strong></td>
+                <td>2 мая 2026</td>
+                <td>28 396 ₽</td>
+                <td>до 29 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Official</strong></td>
+                <td>2 мая 2026</td>
+                <td>30 673 ₽</td>
+                <td>до 29 мая 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Tools</strong></td>
+                <td>6 мая 2026</td>
+                <td>409 721 ₽</td>
+                <td>до 3 июня 2026</td>
+              </tr>
+              <tr>
+                <td><strong>AID Official</strong></td>
+                <td>8 мая 2026</td>
+                <td>262 218 ₽</td>
+                <td>до 5 июня 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note note--on-ink">
+          Баланс WB нельзя ставить в закупочный план как деньги на счёте.
+          Нужно отдельно проверить, какая часть уже стала доступна в «Можно
+          вывести», какая попадёт в следующие отчёты и какие удержания ещё
+          спишутся.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section__heading">
           <p class="kicker">Экономика SKU</p>
           <h2>Прибыль по артикулам</h2>
         </div>
@@ -350,7 +747,8 @@
             <p>
               Зафиксировать лист <code>Unit FBO</code>, завести новую
               себестоимость в Finly, поставить еженедельный дашборд по продажам,
-              выкупам, ДРР и прибыли на единицу.
+              выкупам, ДРР и прибыли на единицу. Повторный заказ
+              <code>WIB-276</code> готовить до прихода первой партии.
             </p>
           </article>
           <article>
@@ -397,7 +795,8 @@
     <footer>
       <p>
         Источники: Google Sheets <code>Китай</code> и <a href="https://docs.google.com/spreadsheets/d/13VOHfbCMYAx8Cvin_78pO91vCMlZO3YT9ISShktXmEQ/edit?gid=1955551978#gid=1955551978"><code>Unit FBO</code></a>, Finly XLSX за 1 января —
-        26 мая 2026, официальные материалы WB Seller по
+        26 мая 2026, отчёты Finly по AID Tools/AID Official за апрель — май 2026,
+        официальные материалы WB Seller по
         <a href="https://seller.wildberries.ru/instructions/ru/kz/material/how-to-transfer-money-to-your-bank-account">выводу денег</a>,
         <a href="https://seller.wildberries.ru/instructions/ru/by/material/how-to-read-general-financial-report?recommended=true">отчётам реализации</a>
         <a href="https://seller.wildberries.ru/instructions/ru/am/material/withdraw-now-service">досрочному выводу</a>

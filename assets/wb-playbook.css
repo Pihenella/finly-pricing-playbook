@@ -381,10 +381,18 @@ tbody tr:last-child td {
   background: #edf8f2;
 }
 
+.risk-row td {
+  background: #fbedf2;
+}
+
 .note {
   width: min(1180px, 100%);
   margin: 18px auto 0;
   color: var(--muted);
+}
+
+.note--on-ink {
+  color: #cbd6d0;
 }
 
 .timeline article {
