@@ -373,8 +373,8 @@ tbody tr:last-child td {
   border-bottom: 0;
 }
 
-.warning-row td {
-  background: #fff7cc;
+.leader-row td {
+  background: #edf8f2;
 }
 
 .note {
