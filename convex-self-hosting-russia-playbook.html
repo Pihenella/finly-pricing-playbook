@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ru" class="dark tavern">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Плейбук Finly: перенос с Convex Cloud на self-hosted Convex, PostgreSQL и S3 в российской инфраструктуре."
+    />
+    <title>Finly · Self-hosted Convex в РФ</title>
+    <link rel="icon" href="./assets/mascot/nav-icon.webp" type="image/webp" />
+    <link rel="stylesheet" href="./assets/finly-pages.css" />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Навигация">
+      <div class="page-shell site-nav__inner">
+        <a class="brand" href="./">
+          <img
+            src="./assets/mascot/nav-icon.webp"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <span>
+            <span class="brand__name">Finly</span>
+            <span class="brand__note">плейбук инфраструктурного переезда</span>
+          </span>
+        </a>
+        <div class="nav-actions">
+          <a class="nav-link" href="./convex-self-hosting-russia-playbook.md"
+            >Markdown</a
+          >
+          <button class="theme-button" type="button" id="theme-toggle">
+            Ночная тема
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="page-shell">
+        <div class="hero__content">
+          <span class="eyebrow">Infrastructure playbook · 8 июня 2026</span>
+          <h1>Convex в РФ</h1>
+          <p class="hero__lead">
+            План переноса Finly на self-hosted Convex, PostgreSQL и S3 в
+            российской инфраструктуре: что сохраняется, где риски, сколько стоит
+            и как внедрять без потери функциональности.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#costs">Стоимость</a>
+            <a class="button button--secondary" href="#stages"
+              >Этапы внедрения</a
+            >
+          </div>
+          <div class="hero__metrics" aria-label="Ключевые ориентиры">
+            <div class="rune-tile">
+              <strong>3 909 ₽</strong>
+              <span>ориентир production-контура в месяц</span>
+            </div>
+            <div class="rune-tile">
+              <strong>29</strong>
+              <span>таблиц Convex в текущей схеме Finly</span>
+            </div>
+            <div class="rune-tile">
+              <strong>≈177</strong>
+              <span>серверных функций остаются в текущей модели</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="summary">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Короткое Решение</h2>
+              <p>
+                Лучший рабочий вариант для Finly сейчас — оставить
+                Convex-архитектуру, но перенести backend, PostgreSQL и
+                S3-совместимое хранилище на российскую инфраструктуру.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="map-grid">
+            <article class="market-card market-card--focus">
+              <h3>Рекомендуем</h3>
+              <p>
+                Timeweb Cloud: VM Cloud MSK 80, управляемый PostgreSQL 2 / 4 /
+                40 и S3 100 GB. Ориентир — около 3 909 ₽/мес.
+              </p>
+              <div class="tag-row">
+                <span class="tag">минимум переписывания</span>
+                <span class="tag">работа без VPN</span>
+                <span class="tag">данные в РФ</span>
+              </div>
+            </article>
+
+            <article class="market-card">
+              <h3>Не спешим</h3>
+              <p>
+                Supabase self-hosted возможен, но для Finly это почти новый
+                backend: функции, crons, realtime, auth и клиентские хуки
+                придется переносить вручную.
+              </p>
+              <div class="tag-row">
+                <span class="tag">дороже по времени</span>
+                <span class="tag">выше риск регрессий</span>
+              </div>
+            </article>
+
+            <article class="market-card">
+              <h3>Проверяем</h3>
+              <p>
+                Главный технический риск — auth-контур на self-hosted Convex:
+                регистрация, вход, восстановление пароля, почта, инвайты и
+                middleware.
+              </p>
+              <div class="tag-row">
+                <span class="tag">staging сначала</span>
+                <span class="tag">rollback обязателен</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--surface" id="architecture">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Что Меняется</h2>
+              <p>
+                Пользовательский frontend может остаться прежним. Главная замена
+                — endpoint Convex: вместо внешнего Convex Cloud приложение ходит
+                в self-hosted Convex в РФ.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="strategy-grid">
+            <article class="scroll-panel">
+              <h3>Сейчас</h3>
+              <ul>
+                <li>Пользователь открывает finly-app.ru.</li>
+                <li>Frontend обращается к Convex Cloud за пределами РФ.</li>
+                <li>
+                  Без VPN возможны задержки, пустые экраны и отваливающиеся
+                  запросы.
+                </li>
+              </ul>
+            </article>
+
+            <article class="scroll-panel">
+              <h3>После переноса</h3>
+              <ul>
+                <li>Frontend обращается к https://server.finly-app.ru.</li>
+                <li>
+                  Self-hosted Convex работает на VM в российском дата-центре.
+                </li>
+                <li>
+                  Данные хранятся в PostgreSQL и S3-совместимом хранилище в РФ.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pros-cons">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Плюсы И Минусы</h2>
+              <p>
+                Вариант хорош тем, что сохраняет архитектуру продукта. Цена
+                этого решения — новая DevOps-ответственность и обязательный
+                staging-тест.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="strategy-grid">
+            <article class="scroll-panel">
+              <h3>Плюсы</h3>
+              <ul>
+                <li>Минимум переписывания backend и frontend.</li>
+                <li>Работа в РФ без VPN.</li>
+                <li>
+                  Сохраняются Convex functions, crons, schema, indexes и
+                  realtime.
+                </li>
+                <li>
+                  Ниже риск регрессий в дашбордах и синхронизации WB/Ozon.
+                </li>
+                <li>
+                  Production-контур можно стартовать примерно с 3 909 ₽/мес.
+                </li>
+              </ul>
+            </article>
+
+            <article class="scroll-panel">
+              <h3>Минусы</h3>
+              <ul>
+                <li>Нужно обслуживать VM, обновления, backup и мониторинг.</li>
+                <li>
+                  Self-hosted Convex нужно проверить на копии данных до
+                  production.
+                </li>
+                <li>
+                  Auth через @convex-dev/auth требует отдельного smoke-test.
+                </li>
+                <li>
+                  Старый Convex Cloud нельзя выключать сразу после переключения.
+                </li>
+                <li>Большие raw-таблицы все равно потребуют оптимизации.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--surface" id="costs">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Стоимость</h2>
+              <p>
+                Срез цен — 8 июня 2026. Перед оплатой нужно перепроверить
+                корзину: провайдеры меняют скидки, региональные коэффициенты и
+                стоимость IPv4.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="price-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Вариант</th>
+                  <th>Состав</th>
+                  <th>Оценка в месяц</th>
+                  <th>Вывод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Timeweb Cloud, production</strong></td>
+                  <td>VM 4/8/80 + IPv4, PostgreSQL 2/4/40, S3 100 GB</td>
+                  <td><span class="price price--our">~3 909 ₽</span></td>
+                  <td>Рекомендованный вариант: дешево и достаточно надежно.</td>
+                </tr>
+                <tr>
+                  <td>Timeweb Cloud, минимальный production</td>
+                  <td>VM 4/8/80 + IPv4, PostgreSQL 1/2/20, S3 100 GB</td>
+                  <td><span class="price">~3 119 ₽</span></td>
+                  <td>Можно начать, но меньше запас под sync и аналитику.</td>
+                </tr>
+                <tr>
+                  <td>Timeweb Cloud, POC</td>
+                  <td>VM 4/8/80 + IPv4, PostgreSQL на VM, S3 10–100 GB</td>
+                  <td><span class="price">~2 059–2 329 ₽</span></td>
+                  <td>Хорошо для теста, слабее для клиентов.</td>
+                </tr>
+                <tr>
+                  <td>Selectel, похожий production</td>
+                  <td>
+                    VDS 4/8/80, PostgreSQL 2 vCPU / 4 GB / 40 GB, storage 100 GB
+                  </td>
+                  <td><span class="price">~7 610–7 967 ₽</span></td>
+                  <td>Надежно, но почти в 2 раза дороже Timeweb.</td>
+                </tr>
+                <tr>
+                  <td>Beget, экономичный VPS</td>
+                  <td>
+                    VPS 4 vCPU / 6 GB / 80 GB + IPv4, self-managed PostgreSQL
+                  </td>
+                  <td><span class="price">от ~2 190 ₽</span></td>
+                  <td>
+                    Скорее POC или ручной production с большим обслуживанием.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="stages">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Этапы Внедрения</h2>
+              <p>
+                Переезд делаем через staging. Production-данные переносим только
+                после проверки auth, sync, crons и ключевых страниц.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="quest-list">
+            <article class="quest">
+              <span class="quest__mark">0</span>
+              <div>
+                <h3>Подготовка</h3>
+                <p>
+                  Фиксируем env, таблицы, функции, crons, auth-сценарии и
+                  rollback.
+                </p>
+              </div>
+            </article>
+            <article class="quest">
+              <span class="quest__mark">1</span>
+              <div>
+                <h3>Инфраструктура в РФ</h3>
+                <p>
+                  Создаем VM, PostgreSQL, S3 buckets, TLS и self-hosted Convex.
+                </p>
+              </div>
+            </article>
+            <article class="quest">
+              <span class="quest__mark">2</span>
+              <div>
+                <h3>Staging-перенос</h3>
+                <p>
+                  Деплоим Convex functions и проверяем продукт на копии данных.
+                </p>
+              </div>
+            </article>
+            <article class="quest">
+              <span class="quest__mark">3</span>
+              <div>
+                <h3>Production-импорт</h3>
+                <p>
+                  Экспортируем Convex Cloud, импортируем в self-hosted Convex и
+                  сверяем данные.
+                </p>
+              </div>
+            </article>
+            <article class="quest">
+              <span class="quest__mark">4</span>
+              <div>
+                <h3>Переключение frontend</h3>
+                <p>
+                  Меняем NEXT_PUBLIC_CONVEX_URL, CONVEX_SERVER_URL и деплоим
+                  frontend.
+                </p>
+              </div>
+            </article>
+            <article class="quest">
+              <span class="quest__mark">5</span>
+              <div>
+                <h3>Стабилизация</h3>
+                <p>
+                  Настраиваем backup, мониторинг, алерты и держим старый Convex
+                  как fallback.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--surface" id="readiness">
+        <div class="page-shell">
+          <div class="closing">
+            <div>
+              <span class="eyebrow">Критерий успеха</span>
+              <h2>Finly работает без VPN и без потери функций</h2>
+              <p>
+                Переезд готов, когда открываются dashboard, products,
+                financials, analytics и settings; auth проходит полный цикл;
+                sync WB/Ozon завершается; crons отрабатывают; backup PostgreSQL
+                и S3 включен.
+              </p>
+              <div class="hero__actions">
+                <a
+                  class="button button--primary"
+                  href="./convex-self-hosting-russia-playbook.md"
+                >
+                  Полный плейбук
+                </a>
+                <a
+                  class="button button--secondary"
+                  href="https://github.com/Pihenella/MFA"
+                >
+                  Репозиторий
+                </a>
+              </div>
+            </div>
+            <img
+              src="./assets/mascot/achievement.webp"
+              alt=""
+              width="136"
+              height="136"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell">
+        <p>Finly · инфраструктурный плейбук self-hosted Convex в РФ</p>
+        <p>
+          Источники:
+          <a href="https://docs.convex.dev/self-hosting">Convex</a>
+          ·
+          <a href="https://timeweb.cloud/services/cloud-servers">Timeweb</a>
+          ·
+          <a href="https://selectel.ru/prices/">Selectel</a>
+          ·
+          <a href="https://beget.com/ru/vps">Beget</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const button = document.getElementById("theme-toggle");
+      const savedMode = localStorage.getItem("finly_pages_mode");
+
+      if (savedMode === "light") {
+        root.classList.remove("dark", "tavern");
+        root.classList.add("light");
+        button.textContent = "Темная тема";
+      } else {
+        root.classList.remove("light");
+        root.classList.add("dark", "tavern");
+        button.textContent = "Светлая тема";
+      }
+
+      button.addEventListener("click", () => {
+        const isDark = root.classList.toggle("dark");
+        root.classList.toggle("light", !isDark);
+        root.classList.toggle("tavern", isDark);
+        localStorage.setItem("finly_pages_mode", isDark ? "dark" : "light");
+        button.textContent = isDark ? "Светлая тема" : "Темная тема";
+      });
+    </script>
+  </body>
+</html>

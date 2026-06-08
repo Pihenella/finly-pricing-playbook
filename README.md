@@ -14,3 +14,8 @@ https://pihenella.github.io/finly-pricing-playbook/
 
 - [HTML-страница](wb-china-fbo-playbook.html)
 - [Markdown-документ](wb-china-fbo-playbook.md)
+
+Плейбук по self-hosted Convex в РФ:
+
+- [HTML-страница](convex-self-hosting-russia-playbook.html)
+- [Markdown-документ](convex-self-hosting-russia-playbook.md)
