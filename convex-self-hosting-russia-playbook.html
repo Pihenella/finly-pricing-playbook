@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Плейбук Finly: перенос с Convex Cloud на self-hosted Convex, PostgreSQL и S3 в российской инфраструктуре."
+      content="Плейбук Finly: перенос с Convex Cloud на self-hosted Convex, PostgreSQL и S3 в российской инфраструктуре, с расчетом стоимости и емкости по тарифам Finly."
     />
     <title>Finly · Self-hosted Convex в РФ</title>
     <link rel="icon" href="./assets/mascot/nav-icon.webp" type="image/webp" />
@@ -49,6 +49,7 @@
           </p>
           <div class="hero__actions">
             <a class="button button--primary" href="#costs">Стоимость</a>
+            <a class="button button--secondary" href="#capacity">Емкость</a>
             <a class="button button--secondary" href="#stages"
               >Этапы внедрения</a
             >
@@ -59,12 +60,12 @@
               <span>ориентир production-контура в месяц</span>
             </div>
             <div class="rune-tile">
-              <strong>29</strong>
-              <span>таблиц Convex в текущей схеме Finly</span>
+              <strong>10–20</strong>
+              <span>селлеров уровня «Разведчик» на стартовом контуре</span>
             </div>
             <div class="rune-tile">
-              <strong>≈177</strong>
-              <span>серверных функций остаются в текущей модели</span>
+              <strong>5 779 ₽</strong>
+              <span>первая ступень роста с PostgreSQL 4/8/80 и S3 250 GB</span>
             </div>
           </div>
         </div>
@@ -91,7 +92,8 @@
               <h3>Рекомендуем</h3>
               <p>
                 Timeweb Cloud: VM Cloud MSK 80, управляемый PostgreSQL 2 / 4 /
-                40 и S3 100 GB. Ориентир — около 3 909 ₽/мес.
+                40 и S3 100 GB. Ориентир — около 3 909 ₽/мес, запас — на
+                первые 10–20 активных селлеров уровня «Разведчик».
               </p>
               <div class="tag-row">
                 <span class="tag">минимум переписывания</span>
@@ -253,42 +255,137 @@
               <tbody>
                 <tr>
                   <td><strong>Timeweb Cloud, production</strong></td>
-                  <td>VM 4/8/80 + IPv4, PostgreSQL 2/4/40, S3 100 GB</td>
+                  <td>Cloud MSK 80 + IPv4, PostgreSQL 2/4/40, S3 100 GB</td>
                   <td><span class="price price--our">~3 909 ₽</span></td>
-                  <td>Рекомендованный вариант: дешево и достаточно надежно.</td>
+                  <td>Рекомендованный старт: 8 GB RAM на backend и управляемая БД.</td>
                 </tr>
                 <tr>
                   <td>Timeweb Cloud, минимальный production</td>
-                  <td>VM 4/8/80 + IPv4, PostgreSQL 1/2/20, S3 100 GB</td>
+                  <td>Cloud MSK 80 + IPv4, PostgreSQL 1/2/20, S3 100 GB</td>
                   <td><span class="price">~3 119 ₽</span></td>
-                  <td>Можно начать, но меньше запас под sync и аналитику.</td>
+                  <td>Подходит для staging и первых оплат, но запас по БД маленький.</td>
                 </tr>
                 <tr>
                   <td>Timeweb Cloud, POC</td>
-                  <td>VM 4/8/80 + IPv4, PostgreSQL на VM, S3 10–100 GB</td>
+                  <td>Cloud MSK 80 + IPv4, PostgreSQL на VM, S3 10–100 GB</td>
                   <td><span class="price">~2 059–2 329 ₽</span></td>
                   <td>Хорошо для теста, слабее для клиентов.</td>
                 </tr>
                 <tr>
+                  <td>Timeweb Cloud, запас</td>
+                  <td>Cloud MSK 80 + IPv4, PostgreSQL 4/8/80, S3 250 GB</td>
+                  <td><span class="price">~5 779 ₽</span></td>
+                  <td>Первая ступень роста без смены backend VM.</td>
+                </tr>
+                <tr>
+                  <td>Timeweb Cloud, рост</td>
+                  <td>Cloud MSK 100 + IPv4, PostgreSQL 4/12/120, S3 250 GB</td>
+                  <td><span class="price">~7 959 ₽</span></td>
+                  <td>Шаг после 20–35 активных селлеров или тяжелых клиентов.</td>
+                </tr>
+                <tr>
+                  <td>Timeweb Cloud, сильный рост</td>
+                  <td>Cloud MSK 160 + IPv4, PostgreSQL 6/12/180, S3 ~500 GB</td>
+                  <td><span class="price">~11 079 ₽</span></td>
+                  <td>Контур под 60–100 клиентов после оптимизаций.</td>
+                </tr>
+                <tr>
                   <td>Selectel, похожий production</td>
                   <td>
-                    VDS 4/8/80, PostgreSQL 2 vCPU / 4 GB / 40 GB, storage 100 GB
+                    VDS 4/8/80, DBaaS PostgreSQL 2/4/40, object storage 100 GB
                   </td>
-                  <td><span class="price">~7 610–7 967 ₽</span></td>
+                  <td><span class="price">~7 600–8 000 ₽</span></td>
                   <td>Надежно, но почти в 2 раза дороже Timeweb.</td>
                 </tr>
                 <tr>
-                  <td>Beget, экономичный VPS</td>
+                  <td>Beget, бюджетный production-кандидат</td>
                   <td>
-                    VPS 4 vCPU / 6 GB / 80 GB + IPv4, self-managed PostgreSQL
+                    VPS Optimal 4/6/80, PostgreSQL 2/4/40, S3 100 GB
                   </td>
-                  <td><span class="price">от ~2 190 ₽</span></td>
+                  <td><span class="price">~3 600 ₽</span></td>
                   <td>
-                    Скорее POC или ручной production с большим обслуживанием.
+                    Дешевле Timeweb, но меньше RAM на backend; нужен benchmark.
                   </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="capacity">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <h2>Емкость По Тарифам Finly</h2>
+              <p>
+                Считаем не абстрактных пользователей, а активных селлеров:
+                магазины, оборот, глубина raw-истории, syncLog и тяжелые
+                запросы к orders, sales и financials.
+              </p>
+            </div>
+            <div class="divider-rune"></div>
+          </div>
+
+          <div class="price-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Тариф Finly</th>
+                  <th>Лимит клиента</th>
+                  <th>Цена</th>
+                  <th>Что значит для инфраструктуры</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Искатель</td>
+                  <td>до 1 млн ₽/мес, до 2 магазинов</td>
+                  <td>990 ₽ ранняя / 1 990 ₽ обычная</td>
+                  <td>Нагрузка чаще идет от crons и syncLog, а не от заказов.</td>
+                </tr>
+                <tr>
+                  <td><strong>Разведчик</strong></td>
+                  <td>до 10 млн ₽/мес, до 2 магазинов</td>
+                  <td>2 990 ₽ ранняя / 4 990 ₽ обычная</td>
+                  <td>Главный ориентир capacity plan: 10–20 таких клиентов на старте.</td>
+                </tr>
+                <tr>
+                  <td>Картограф</td>
+                  <td>до 20 млн ₽/мес, до 5 магазинов</td>
+                  <td>5 990 ₽ ранняя / 8 990 ₽ обычная</td>
+                  <td>Больше параллельной синхронизации и быстрее растет PostgreSQL.</td>
+                </tr>
+                <tr>
+                  <td>Капитан экспедиции</td>
+                  <td>до 30 млн ₽/мес, до 10 магазинов</td>
+                  <td>9 990 ₽ ранняя / 14 990 ₽ обычная</td>
+                  <td>Нужен запас по БД, sync windows и latency аналитики.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="strategy-grid">
+            <article class="scroll-panel">
+              <h3>Модель нагрузки</h3>
+              <ul>
+                <li>Средний чек для расчета: 1 500 ₽.</li>
+                <li>Документы растут через orders, sales, financials, dailyProductMetrics, nmReports и syncLog.</li>
+                <li>Один магазин может добавлять 6–8 тыс. строк syncLog в месяц, если их не чистить.</li>
+                <li>Ориентир PostgreSQL: 30–80 MB на каждый 1 млн ₽ оборота за месяц raw-истории.</li>
+              </ul>
+            </article>
+
+            <article class="scroll-panel">
+              <h3>Когда апгрейдить</h3>
+              <ul>
+                <li>Стартовый Timeweb 2/4/40: 10–20 клиентов «Разведчик».</li>
+                <li>PostgreSQL 4/8/80 + S3 250 GB: 20–35 клиентов.</li>
+                <li>Cloud MSK 100 + PostgreSQL 4/12/120: 35–60 клиентов после чистки логов.</li>
+                <li>Cloud MSK 160 + PostgreSQL 6/12/180: 60–100 клиентов после агрегатов и архива.</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -419,6 +516,10 @@
           <a href="https://selectel.ru/prices/">Selectel</a>
           ·
           <a href="https://beget.com/ru/vps">Beget</a>
+          ·
+          <a href="https://beget.com/ru/cloud/dbaas-postgresql">Beget PostgreSQL</a>
+          ·
+          <a href="https://beget.com/ru/cloud/storage">Beget S3</a>
         </p>
       </div>
     </footer>
