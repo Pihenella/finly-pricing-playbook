@@ -1,14 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="AID WB China Supplier Playbook: текущие остатки, anti-OOS мост старого поставщика, сдвинутый график Китая и план закупок до конца 2026 года."
-    />
+      content="AID WB China Supplier Playbook: текущие остатки, временная закупка у старого поставщика, обновлённый график Китая и план до конца 2026 года."
+    >
     <title>AID WB · China Supplier Playbook</title>
-    <link rel="stylesheet" href="./assets/aid-supplier-playbook.css" />
+    <link rel="stylesheet" href="./assets/aid-supplier-playbook.css">
   </head>
   <body>
     <header class="hero">
@@ -16,7 +16,7 @@
         <a href="./" class="brand">Finly Playbooks</a>
         <div class="topbar__links">
           <a href="./aid-wb-china-supplier-playbook.md">Markdown</a>
-          <a href="#bridge">Старый мост</a>
+          <a href="#bridge">Старый поставщик</a>
           <a href="#supplier-memo">Supplier memo</a>
         </div>
       </nav>
@@ -24,17 +24,18 @@
       <div class="hero__grid">
         <div>
           <p class="kicker">AID WB · China supply · July 2026</p>
-          <h1>AID × China: план без out-of-stock</h1>
+          <h1>AID × China: как не остаться без товара</h1>
           <p class="lead">
-            Первая китайская партия из-за таможни приходит в 25-х числах июля.
-            До её фактической доступности на WB закрываем дыры старым
-            поставщиком, а поздний китайский хвост режем на тот же объём.
+            Китайская партия задержалась на таможне. Ждём её 25–29 июля,
+            а на WB считаем доступной 31 июля. До этого добираем товар у
+            старого поставщика, а поздние заказы из Китая уменьшаем на тот же
+            объём.
           </p>
         </div>
 
         <aside class="decision-panel" aria-label="Ключевой вывод">
           <span>Решение</span>
-          <strong>Старый поставщик — мост, Китай — основная линия.</strong>
+          <strong>Старый поставщик закрывает задержку. Китай остаётся главным планом.</strong>
           <p>
             Новая закупка 2026: <strong>2 400 шт. / 8 753 801 ₽</strong>.
             Товарное покрытие с текущим WB-остатком: <strong>2 659 шт.</strong>
@@ -49,14 +50,14 @@
           <p>уже лежит на складе, около 831 263 ₽</p>
         </article>
         <article>
-          <span>Старый мост</span>
+          <span>Старый поставщик</span>
           <strong>580 шт.</strong>
-          <p>2 127 780 ₽, чтобы не уйти в OOS</p>
+          <p>2 127 780 ₽, чтобы товар не закончился</p>
         </article>
         <article>
           <span>Китай 2026</span>
           <strong>1 820 шт.</strong>
-          <p>6 626 021 ₽ после сдвига волн</p>
+          <p>6 626 021 ₽ после сдвига графика</p>
         </article>
         <article>
           <span>Покрытие</span>
@@ -70,12 +71,12 @@
       <section class="section" id="forecast">
         <div class="section__heading">
           <div>
-            <p class="kicker">Demand baseline</p>
-            <h2>Квартальный Контроль Темпа</h2>
+            <p class="kicker">Спрос</p>
+            <h2>Какой спрос берём в расчёт</h2>
             <p>
-              Q2 — нижняя граница спроса, июнь-июль — текущая скорость.
-              Рабочий план держим выше квартального среднего, потому что часть
-              SKU уже ограничена остатками.
+              Q2 показывает нижнюю границу спроса. Июнь-июль ближе к текущей
+              скорости. Рабочий план выше среднего, потому что часть товаров
+              уже продавалась хуже из-за нехватки остатка.
             </p>
           </div>
           <div class="divider"></div>
@@ -85,13 +86,13 @@
           <table>
             <thead>
               <tr>
-                <th>Артикул</th>
-                <th class="num">Q2, заказов</th>
-                <th class="num">Q2/мес</th>
-                <th class="num">7 апр – 6 июл/мес</th>
-                <th class="num">Июнь</th>
-                <th class="num">1–6 июля/мес</th>
-                <th class="num">Рабочий спрос</th>
+                <th scope="col">Артикул</th>
+                <th scope="col" class="num">Q2, заказов</th>
+                <th scope="col" class="num">Q2/мес</th>
+                <th scope="col" class="num">7 апр – 6 июл/мес</th>
+                <th scope="col" class="num">Июнь</th>
+                <th scope="col" class="num">Темп 1–6 июля/мес</th>
+                <th scope="col" class="num">Рабочий спрос</th>
               </tr>
             </thead>
             <tbody>
@@ -150,13 +151,13 @@
                 <td class="num">20</td>
               </tr>
               <tr>
-                <th>Итого</th>
-                <th class="num">955</th>
-                <th class="num">315</th>
-                <th class="num">321</th>
-                <th class="num">363</th>
-                <th class="num">390</th>
-                <th class="num">438</th>
+                <th scope="row">Итого</th>
+                <th scope="row" class="num">955</th>
+                <th scope="row" class="num">315</th>
+                <th scope="row" class="num">321</th>
+                <th scope="row" class="num">363</th>
+                <th scope="row" class="num">390</th>
+                <th scope="row" class="num">438</th>
               </tr>
             </tbody>
           </table>
@@ -166,12 +167,12 @@
       <section class="section" id="stock">
         <div class="section__heading">
           <div>
-            <p class="kicker">Current stock</p>
-            <h2>Что Уже Есть На WB</h2>
+            <p class="kicker">Остаток</p>
+            <h2>Что уже есть на WB</h2>
             <p>
-              Это текущий склад, который уже принят на WB. Первая китайская
-              партия добавляется позже, поэтому до 25-х чисел июля текущий
-              остаток нельзя считать вместе с ней.
+              Это товар, который уже принят на WB. Первую китайскую партию
+              добавляем только после прихода, поэтому до конца июля считаем
+              текущий остаток отдельно.
             </p>
           </div>
           <div class="divider"></div>
@@ -181,12 +182,12 @@
           <table>
             <thead>
               <tr>
-                <th>Артикул</th>
-                <th class="num">Остаток WB</th>
-                <th class="num">Старая себест.</th>
-                <th class="num">Деньги в остатке</th>
-                <th class="num">1-я партия Китай</th>
-                <th class="num">Остаток + 1-я партия</th>
+                <th scope="col">Артикул</th>
+                <th scope="col" class="num">Остаток WB</th>
+                <th scope="col" class="num">Старая себест.</th>
+                <th scope="col" class="num">Деньги в остатке</th>
+                <th scope="col" class="num">1-я партия Китай</th>
+                <th scope="col" class="num">Остаток + 1-я партия</th>
               </tr>
             </thead>
             <tbody>
@@ -239,12 +240,12 @@
                 <td class="num">85 шт.</td>
               </tr>
               <tr>
-                <th>Итого</th>
-                <th class="num">259 шт.</th>
-                <th></th>
-                <th class="num">831 263 ₽</th>
-                <th class="num">520 шт.</th>
-                <th class="num">779 шт.</th>
+                <th scope="row">Итого</th>
+                <th scope="row" class="num">259 шт.</th>
+                <td></td>
+                <th scope="row" class="num">831 263 ₽</th>
+                <th scope="row" class="num">520 шт.</th>
+                <th scope="row" class="num">779 шт.</th>
               </tr>
             </tbody>
           </table>
@@ -254,12 +255,12 @@
       <section class="section" id="bridge">
         <div class="section__heading">
           <div>
-            <p class="kicker">Anti-OOS bridge</p>
-            <h2>Что Заказать У Старого Поставщика</h2>
+            <p class="kicker">Старый поставщик</p>
+            <h2>Что заказать у старого поставщика</h2>
             <p>
-              Мост старого поставщика нужен только для дыр до Китая. Его объём
-              сразу вычитаем из поздних китайских волн, чтобы не сделать лишний
-              склад в ноябре-декабре.
+              Это временная закупка на период задержки. Берём 580 шт. быстро,
+              а потом убираем тот же объём из поздних китайских заказов, чтобы
+              не раздуть склад к декабрю.
             </p>
           </div>
           <div class="divider"></div>
@@ -269,12 +270,12 @@
           <table>
             <thead>
               <tr>
-                <th>Артикул</th>
-                <th class="num">Остаток WB</th>
-                <th class="num">Спрос до 25 июля</th>
-                <th class="num">Минимальная дыра</th>
-                <th class="num">Заказ № 1</th>
-                <th>Решение</th>
+                <th scope="col">Артикул</th>
+                <th scope="col" class="num">Остаток WB</th>
+                <th scope="col" class="num">Спрос до 25 июля</th>
+                <th scope="col" class="num">Сколько не хватает</th>
+                <th scope="col" class="num">Заказ № 1</th>
+                <th scope="col">Почему так</th>
               </tr>
             </thead>
             <tbody>
@@ -308,7 +309,7 @@
                 <td class="num">20</td>
                 <td class="num">18</td>
                 <td class="num">30</td>
-                <td class="urgent">закрыть OOS</td>
+                <td class="urgent">товара почти нет</td>
               </tr>
               <tr>
                 <td><code>WIB-271</code></td>
@@ -324,15 +325,15 @@
                 <td class="num">12</td>
                 <td class="num">7</td>
                 <td class="num">20</td>
-                <td>закрыть разрыв</td>
+                <td>закрыть разрыв до Китая</td>
               </tr>
               <tr>
-                <th>Итого</th>
-                <th class="num">259</th>
-                <th class="num">263</th>
-                <th class="num">42</th>
-                <th class="num">160</th>
-                <th>804 880 ₽</th>
+                <th scope="row">Итого</th>
+                <th scope="row" class="num">259</th>
+                <th scope="row" class="num">263</th>
+                <th scope="row" class="num">42</th>
+                <th scope="row" class="num">160</th>
+                <th scope="row">804 880 ₽</th>
               </tr>
             </tbody>
           </table>
@@ -342,11 +343,11 @@
           <table>
             <thead>
               <tr>
-                <th>Блок</th>
-                <th>Срок</th>
-                <th class="num">Кол-во</th>
-                <th class="num">Сумма</th>
-                <th>Задача</th>
+                <th scope="col">Блок</th>
+                <th scope="col">Срок</th>
+                <th scope="col" class="num">Кол-во</th>
+                <th scope="col" class="num">Сумма</th>
+                <th scope="col">Задача</th>
               </tr>
             </thead>
             <tbody>
@@ -355,28 +356,28 @@
                 <td>7–8 июля</td>
                 <td class="num">160 шт.</td>
                 <td class="num">804 880 ₽</td>
-                <td>пережить задержку первой партии до WB</td>
+                <td>пережить задержку первой партии</td>
               </tr>
               <tr>
                 <td>Старый поставщик № 2</td>
                 <td>1–5 августа</td>
                 <td class="num">420 шт.</td>
                 <td class="num">1 322 900 ₽</td>
-                <td>закрыть август-сентябрь до повторного Китая</td>
+                <td>закрыть август-сентябрь до прихода Китая 2</td>
               </tr>
               <tr>
                 <td>Резерв</td>
                 <td>после 30 сентября</td>
                 <td class="num">+50 шт.</td>
                 <td class="num">+152 030 ₽</td>
-                <td>только если повторный Китай сдвинется дальше</td>
+                <td>только если Китай 2 сдвинется дальше</td>
               </tr>
               <tr>
-                <th>Итого мост</th>
-                <th></th>
-                <th class="num">580 шт.</th>
-                <th class="num">2 127 780 ₽</th>
-                <th></th>
+                <th scope="row">Итого у старого поставщика</th>
+                <td></td>
+                <th scope="row" class="num">580 шт.</th>
+                <th scope="row" class="num">2 127 780 ₽</th>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -386,27 +387,27 @@
       <section class="section" id="china">
         <div class="section__heading">
           <div>
-            <p class="kicker">Shifted China plan</p>
-            <h2>Китайская Программа После Сдвига</h2>
+            <p class="kicker">Китай</p>
+            <h2>Обновлённый план по Китаю</h2>
             <p>
-              Повторную волну ставим на 15–19 июля. Поздние китайские волны
-              уменьшаем на мост старого поставщика: общий закупочный объём
-              остаётся 2 400 шт., но риск OOS закрывается раньше.
+              Повторный заказ ставим на 15–19 июля. Поздние китайские партии
+              уменьшаем на 580 шт.: общий объём закупки остаётся 2 400 шт.,
+              но риск нехватки закрываем раньше.
             </p>
           </div>
           <div class="divider"></div>
         </div>
 
-        <div class="wave-grid" aria-label="Закупочные волны">
+        <div class="wave-grid">
           <article class="wave-card">
             <span>Китай 1</span>
             <strong>520 шт.</strong>
-            <p>приход 25–29 июля, WB-доступность 31 июля</p>
+            <p>приход 25–29 июля, на WB считаем с 31 июля</p>
           </article>
           <article class="wave-card wave-card--hot">
             <span>Китай 2</span>
             <strong>860 шт.</strong>
-            <p>заказ 15–19 июля, WB 20–30 сентября</p>
+            <p>заказ 15–19 июля, на WB 20–30 сентября</p>
           </article>
           <article class="wave-card">
             <span>Китай 3</span>
@@ -424,12 +425,12 @@
           <table>
             <thead>
               <tr>
-                <th>Волна</th>
-                <th>Срок</th>
-                <th class="num">Кол-во</th>
-                <th class="num">Сумма</th>
-                <th class="num">30%</th>
-                <th class="num">70%</th>
+                <th scope="col">Партия</th>
+                <th scope="col">Срок</th>
+                <th scope="col" class="num">Кол-во</th>
+                <th scope="col" class="num">Сумма</th>
+                <th scope="col" class="num">30%</th>
+                <th scope="col" class="num">70%</th>
               </tr>
             </thead>
             <tbody>
@@ -466,12 +467,12 @@
                 <td class="num">361 807 ₽</td>
               </tr>
               <tr>
-                <th>Китай 2026</th>
-                <th></th>
-                <th class="num">1 820 шт.</th>
-                <th class="num">6 626 021 ₽</th>
-                <th></th>
-                <th></th>
+                <th scope="row">Китай 2026</th>
+                <td></td>
+                <th scope="row" class="num">1 820 шт.</th>
+                <th scope="row" class="num">6 626 021 ₽</th>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
@@ -481,12 +482,12 @@
       <section class="section" id="coverage">
         <div class="section__heading">
           <div>
-            <p class="kicker">Year-end coverage</p>
-            <h2>Покрытие До Конца 2026</h2>
+            <p class="kicker">Покрытие</p>
+            <h2>Хватит ли товара до конца 2026</h2>
             <p>
-              Горизонт прогноза: 7 июля – 31 декабря, 178 дней. Текущий склад,
-              старый мост и Китай дают тот же товарный объём, но с меньшим
-              риском провала в августе-сентябре.
+              Считаем период с 7 июля по 31 декабря: 178 дней. Текущий склад,
+              старый поставщик и Китай дают 2 659 шт. Этого хватает до конца
+              года с буфером 59 шт.
             </p>
           </div>
           <div class="divider"></div>
@@ -496,11 +497,11 @@
           <table>
             <thead>
               <tr>
-                <th>Артикул</th>
-                <th class="num">Спрос/мес</th>
-                <th class="num">Прогноз до 31 дек</th>
-                <th class="num">Покрытие</th>
-                <th class="num">Буфер</th>
+                <th scope="col">Артикул</th>
+                <th scope="col" class="num">Спрос/мес</th>
+                <th scope="col" class="num">Прогноз до 31 дек</th>
+                <th scope="col" class="num">Покрытие</th>
+                <th scope="col" class="num">Буфер</th>
               </tr>
             </thead>
             <tbody>
@@ -547,11 +548,11 @@
                 <td class="num">+6</td>
               </tr>
               <tr>
-                <th>Итого</th>
-                <th class="num">438</th>
-                <th class="num">2 600</th>
-                <th class="num">2 659</th>
-                <th class="num">+59</th>
+                <th scope="row">Итого</th>
+                <th scope="row" class="num">438</th>
+                <th scope="row" class="num">2 600</th>
+                <th scope="row" class="num">2 659</th>
+                <th scope="row" class="num">+59</th>
               </tr>
             </tbody>
           </table>
@@ -561,9 +562,9 @@
           <table>
             <thead>
               <tr>
-                <th>Блок</th>
-                <th class="num">Кол-во</th>
-                <th class="num">Сумма</th>
+                <th scope="col">Блок</th>
+                <th scope="col" class="num">Кол-во</th>
+                <th scope="col" class="num">Сумма</th>
               </tr>
             </thead>
             <tbody>
@@ -573,7 +574,7 @@
                 <td class="num">831 263 ₽</td>
               </tr>
               <tr>
-                <td>Старый поставщик, новый мост</td>
+                <td>Старый поставщик, временная закупка</td>
                 <td class="num">580 шт.</td>
                 <td class="num">2 127 780 ₽</td>
               </tr>
@@ -583,9 +584,9 @@
                 <td class="num">6 626 021 ₽</td>
               </tr>
               <tr>
-                <th>Новая закупка 2026</th>
-                <th class="num">2 400 шт.</th>
-                <th class="num">8 753 801 ₽</th>
+                <th scope="row">Новая закупка 2026</th>
+                <th scope="row" class="num">2 400 шт.</th>
+                <th scope="row" class="num">8 753 801 ₽</th>
               </tr>
             </tbody>
           </table>
@@ -596,23 +597,23 @@
         <div class="section__heading">
           <div>
             <p class="kicker">Control points</p>
-            <h2>Календарь Решений</h2>
+            <h2>Календарь решений</h2>
             <p>
-              График держит два потока: быстрый мост старого поставщика и
-              сдвинутую китайскую линию.
+              Два потока идут параллельно: быстрый заказ у старого поставщика
+              и обновлённый график Китая.
             </p>
           </div>
           <div class="divider"></div>
         </div>
 
-        <div class="timeline" aria-label="Календарь решений">
+        <div class="timeline">
           <article>
             <time datetime="2026-07-07">7–8 июля</time>
-            <p>Подтвердить старый мост № 1: 160 шт. / 804 880 ₽.</p>
+            <p>Подтвердить заказ № 1 у старого поставщика: 160 шт. / 804 880 ₽.</p>
           </article>
           <article>
             <time datetime="2026-07-12">12–18 июля</time>
-            <p>Завести мост № 1 на WB, приоритет WIB-250, WIB-271, WIB-270.</p>
+            <p>Завести заказ № 1 на WB, приоритет WIB-250, WIB-271, WIB-270.</p>
           </article>
           <article>
             <time datetime="2026-07-15">15–19 июля</time>
@@ -624,11 +625,11 @@
           </article>
           <article>
             <time datetime="2026-07-31">31 июля</time>
-            <p>Рабочая дата доступности первой партии на WB.</p>
+            <p>Считать первую партию доступной на WB.</p>
           </article>
           <article>
             <time datetime="2026-08-01">1–5 августа</time>
-            <p>Подтвердить старый мост № 2: 420 шт. / 1 322 900 ₽.</p>
+            <p>Подтвердить заказ № 2 у старого поставщика: 420 шт. / 1 322 900 ₽.</p>
           </article>
           <article>
             <time datetime="2026-09-05">5–12 сентября</time>
@@ -645,10 +646,10 @@
         <div class="section__heading">
           <div>
             <p class="kicker">Supplier memo</p>
-            <h2>English Version For China</h2>
+            <h2>English version for China</h2>
             <p>
-              Блок для китайского поставщика: без лишней внутренней детализации,
-              но с понятной логикой долгой программы.
+              Блок для китайского поставщика: без внутренней детализации, но с
+              понятной логикой долгой программы.
             </p>
           </div>
           <div class="divider"></div>
@@ -664,17 +665,17 @@
               expected to arrive in late July.
             </p>
             <p>
-              To avoid stock-outs while the China pipeline is being rebuilt, we
-              will use a temporary local bridge for part of the volume. This
-              bridge replaces part of later China orders; it does not increase
-              total overstock.
+              To avoid stock-outs before the China orders arrive, we will use a
+              temporary local supplier for part of the volume. This local volume
+              replaces part of later China orders; it does not increase total
+              overstock.
             </p>
           </article>
 
           <article class="english-card">
             <h3>What We Need</h3>
             <ul>
-              <li>Priority production for fast-moving SKUs.</li>
+              <li>Priority production for fast-moving items.</li>
               <li>Confirmed lead time for the July repeat order.</li>
               <li>Stable pricing until the end of 2026.</li>
               <li>QC photos and videos before balance payment.</li>
@@ -688,10 +689,10 @@
           <table>
             <thead>
               <tr>
-                <th>Order wave</th>
-                <th>Planned timing</th>
-                <th class="num">Quantity</th>
-                <th class="num">Amount, RUB equivalent</th>
+                <th scope="col">Order batch</th>
+                <th scope="col">Planned timing</th>
+                <th scope="col" class="num">Quantity</th>
+                <th scope="col" class="num">Amount, RUB equivalent</th>
               </tr>
             </thead>
             <tbody>
@@ -720,10 +721,10 @@
                 <td class="num">516,867</td>
               </tr>
               <tr>
-                <th>China 2026 total</th>
-                <th></th>
-                <th class="num">1,820 pcs</th>
-                <th class="num">6,626,021</th>
+                <th scope="row">China 2026 total</th>
+                <td></td>
+                <th scope="row" class="num">1,820 pcs</th>
+                <th scope="row" class="num">6,626,021</th>
               </tr>
             </tbody>
           </table>
@@ -733,7 +734,7 @@
 
     <footer class="footer">
       <div class="page-shell">
-        <span>AID WB China Supplier Playbook · версия 1.3 · 7 июля 2026</span>
+        <span>AID WB China Supplier Playbook · версия 1.4 · 7 июля 2026</span>
         <a href="./aid-wb-china-supplier-playbook.md">Открыть Markdown</a>
       </div>
     </footer>
