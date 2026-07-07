@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AID WB China Supplier Playbook: прогноз дозаказов по китайским SKU, закупочные волны до конца 2026 года и supplier memo для переговоров."
+    />
+    <title>AID WB · China Supplier Playbook</title>
+    <link rel="stylesheet" href="./assets/aid-supplier-playbook.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Навигация">
+        <a href="./" class="brand">Finly Playbooks</a>
+        <div class="topbar__links">
+          <a href="./aid-wb-china-supplier-playbook.md">Markdown</a>
+          <a href="./wb-china-fbo-playbook.html">WB FBO bridge</a>
+          <a href="#supplier-memo">Supplier memo</a>
+        </div>
+      </nav>
+
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">AID WB · China supply · July 2026</p>
+          <h1>AID × China: план повторных закупок</h1>
+          <p class="lead">
+            Первая китайская партия закрывает переход, но не весь сезон. По
+            темпу июня и первых шести дней июля повторный заказ нужен уже
+            сейчас, чтобы не потерять август-сентябрь по быстрым SKU.
+          </p>
+        </div>
+
+        <aside class="decision-panel" aria-label="Ключевой вывод">
+          <span>Решение</span>
+          <strong>Ставим повторный Китай в июле.</strong>
+          <p>
+            Приоритет: <code>WIB-276</code>, <code>WIB-233</code> и
+            <code>WIB-277</code>. Для поставщика показываем программу на
+            <strong>2 780 шт. / 10 048 216 ₽</strong> до конца 2026 года.
+          </p>
+        </aside>
+      </div>
+
+      <section class="metric-strip" aria-label="Ключевые показатели">
+        <article>
+          <span>Программа 2026</span>
+          <strong>2 780 шт.</strong>
+          <p>первая партия + три повторные волны</p>
+        </article>
+        <article>
+          <span>Закупка 2026</span>
+          <strong>10 048 216 ₽</strong>
+          <p>RUB equivalent по текущей модели</p>
+        </article>
+        <article>
+          <span>Повторные заказы</span>
+          <strong>8 049 946 ₽</strong>
+          <p>план после первой партии</p>
+        </article>
+        <article>
+          <span>Цикл поставки</span>
+          <strong>65–75 дней</strong>
+          <p>заявка → товарный остаток на WB</p>
+        </article>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="forecast">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">SKU forecast</p>
+            <h2>Когда Нужен Дозаказ</h2>
+            <p>
+              Считаем от факта Finly: июнь 2026 и 1–6 июля 2026. Для
+              stock-limited SKU не занижаем спрос только потому, что карточка
+              временно без остатка.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Артикул</th>
+                <th class="num">Остаток WB</th>
+                <th class="num">1-я партия</th>
+                <th class="num">Июнь</th>
+                <th class="num">1–6 июля</th>
+                <th class="num">Спрос/мес</th>
+                <th>Риск OOS</th>
+                <th>Решение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>WIB-276</code></td>
+                <td class="num">116</td>
+                <td class="num">120</td>
+                <td class="num">167</td>
+                <td class="num">38</td>
+                <td class="num">186</td>
+                <td>около 19 августа</td>
+                <td class="urgent">заказывать сейчас</td>
+              </tr>
+              <tr>
+                <td><code>WIB-233</code></td>
+                <td class="num">102</td>
+                <td class="num">80</td>
+                <td class="num">109</td>
+                <td class="num">29</td>
+                <td class="num">123</td>
+                <td>около 20 августа</td>
+                <td class="urgent">заказывать сейчас</td>
+              </tr>
+              <tr>
+                <td><code>WIB-277</code></td>
+                <td class="num">33</td>
+                <td class="num">80</td>
+                <td class="num">51</td>
+                <td class="num">8</td>
+                <td class="num">48</td>
+                <td>около 19 сентября</td>
+                <td class="urgent">дедлайн уже на грани</td>
+              </tr>
+              <tr>
+                <td><code>WIB-250</code></td>
+                <td class="num">3</td>
+                <td class="num">80</td>
+                <td class="num">10</td>
+                <td class="num">0</td>
+                <td class="num">34</td>
+                <td>около 10 октября</td>
+                <td>до 27 июля</td>
+              </tr>
+              <tr>
+                <td><code>WIB-271</code></td>
+                <td class="num">0</td>
+                <td class="num">80</td>
+                <td class="num">6</td>
+                <td class="num">0</td>
+                <td class="num">27</td>
+                <td>около 27 октября</td>
+                <td>до 13 августа</td>
+              </tr>
+              <tr>
+                <td><code>WIB-270</code></td>
+                <td class="num">5</td>
+                <td class="num">80</td>
+                <td class="num">20</td>
+                <td class="num">3</td>
+                <td class="num">20</td>
+                <td>около 25 ноября</td>
+                <td>середина сентября</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="waves">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Purchase waves</p>
+            <h2>Закупочная Программа</h2>
+            <p>
+              Логика для поставщика: одна партия уже заказана, следующая нужна
+              срочно, дальше работаем волнами, чтобы производство и касса были
+              предсказуемыми.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="wave-grid" aria-label="Закупочные волны">
+          <article class="wave-card">
+            <span>Волна 1</span>
+            <strong>520 шт.</strong>
+            <p>уже заказано, 70% к оплате 14 июля</p>
+          </article>
+          <article class="wave-card wave-card--hot">
+            <span>Волна 2</span>
+            <strong>1 020 шт.</strong>
+            <p>8–12 июля, срочный повторный заказ</p>
+          </article>
+          <article class="wave-card">
+            <span>Волна 3</span>
+            <strong>860 шт.</strong>
+            <p>25 августа – 5 сентября, поддержка ноября</p>
+          </article>
+          <article class="wave-card">
+            <span>Волна 4</span>
+            <strong>380 шт.</strong>
+            <p>15–25 октября, декабрь и старт 2027</p>
+          </article>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Волна</th>
+                <th>Срок размещения</th>
+                <th class="num">Кол-во</th>
+                <th class="num">Сумма</th>
+                <th class="num">30%</th>
+                <th class="num">70%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Первая партия</td>
+                <td>уже заказана</td>
+                <td class="num">520 шт.</td>
+                <td class="num">1 998 270 ₽</td>
+                <td class="num">599 481 ₽ оплачено</td>
+                <td class="num">1 398 789 ₽</td>
+              </tr>
+              <tr>
+                <td>Волна 2</td>
+                <td>8–12 июля</td>
+                <td class="num">1 020 шт.</td>
+                <td class="num">3 679 425 ₽</td>
+                <td class="num">1 103 828 ₽</td>
+                <td class="num">2 575 598 ₽</td>
+              </tr>
+              <tr>
+                <td>Волна 3</td>
+                <td>25 августа – 5 сентября</td>
+                <td class="num">860 шт.</td>
+                <td class="num">3 043 822 ₽</td>
+                <td class="num">913 147 ₽</td>
+                <td class="num">2 130 676 ₽</td>
+              </tr>
+              <tr>
+                <td>Волна 4</td>
+                <td>15–25 октября</td>
+                <td class="num">380 шт.</td>
+                <td class="num">1 326 698 ₽</td>
+                <td class="num">398 009 ₽</td>
+                <td class="num">928 689 ₽</td>
+              </tr>
+              <tr>
+                <th>Итого 2026</th>
+                <th></th>
+                <th class="num">2 780 шт.</th>
+                <th class="num">10 048 216 ₽</th>
+                <th class="num"></th>
+                <th class="num"></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="sku-plan">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">SKU mix</p>
+            <h2>Что Показываем По Артикулам</h2>
+            <p>
+              Поставщик видит не абстрактный интерес, а понятный план:
+              приоритет производства, ожидаемый объём и роль каждого SKU.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Артикул</th>
+                <th class="num">Кол-во 2026</th>
+                <th class="num">Сумма 2026</th>
+                <th>Роль в матрице</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>WIB-276</code></td>
+                <td class="num">1 180</td>
+                <td class="num">4 984 713 ₽</td>
+                <td>главный оборот, приоритет производства</td>
+              </tr>
+              <tr>
+                <td><code>WIB-233</code></td>
+                <td class="num">740</td>
+                <td class="num">1 376 308 ₽</td>
+                <td>быстрый рост в июне-июле</td>
+              </tr>
+              <tr>
+                <td><code>WIB-277</code></td>
+                <td class="num">300</td>
+                <td class="num">1 531 125 ₽</td>
+                <td>стабильный средний SKU</td>
+              </tr>
+              <tr>
+                <td><code>WIB-250</code></td>
+                <td class="num">240</td>
+                <td class="num">865 020 ₽</td>
+                <td>высокий ROI, спрос ограничен остатками</td>
+              </tr>
+              <tr>
+                <td><code>WIB-271</code></td>
+                <td class="num">180</td>
+                <td class="num">723 105 ₽</td>
+                <td>проверка восстановления после OOS</td>
+              </tr>
+              <tr>
+                <td><code>WIB-270</code></td>
+                <td class="num">140</td>
+                <td class="num">567 945 ₽</td>
+                <td>высокая прибыль на единицу, спокойный темп</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="terms">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Negotiation points</p>
+            <h2>Что Просим У Поставщика</h2>
+            <p>
+              Нам нужен не разовый инвойс, а повторяемый производственный
+              процесс: сроки, контроль качества, упаковка под WB FBO и
+              прогнозируемая цена.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="split">
+          <div class="ask-grid">
+            <article>
+              <span>Слот</span>
+              <h3>Производство в июле</h3>
+              <p>Закрепить волну 2 и начать с быстрых SKU.</p>
+            </article>
+            <article>
+              <span>Приоритет</span>
+              <h3>WIB-276 / 233 / 277</h3>
+              <p>Эти позиции определяют риск августовского провала.</p>
+            </article>
+            <article>
+              <span>Поставка</span>
+              <h3>Split shipment</h3>
+              <p>Сначала быстрые SKU, затем хвост партии.</p>
+            </article>
+          </div>
+
+          <aside class="terms-panel">
+            <ol>
+              <li>Зафиксировать цены до 31 декабря 2026 года.</li>
+              <li>Дать lead time по каждому SKU.</li>
+              <li>Присылать фото и видео ОТК перед оплатой 70%.</li>
+              <li>Готовить carton labels, упаковку и штрихкоды под WB FBO.</li>
+              <li>Давать еженедельный статус производства и отгрузки.</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="supplier-memo">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Supplier memo</p>
+            <h2>English Version For China</h2>
+            <p>
+              Короткий блок, который можно отправлять поставщику как
+              переговорную рамку без внутренних деталей Finly.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="english-memo">
+          <article class="english-card">
+            <h3>Cooperation Intent</h3>
+            <p>
+              We are building a long-term supply program, not a one-time test
+              order. Our first China order is <strong>520 pcs / 1,998,270 RUB
+              equivalent</strong>. Based on June and early July sales, the first
+              batch will not cover the full 2026 season.
+            </p>
+            <p>
+              The next purchase order should be placed immediately, especially
+              for <code>WIB-276</code>, <code>WIB-233</code>, and
+              <code>WIB-277</code>.
+            </p>
+          </article>
+
+          <article class="english-card">
+            <h3>What We Need</h3>
+            <ul>
+              <li>Stable production slots for repeat orders.</li>
+              <li>Priority production for fast-moving SKUs.</li>
+              <li>Stable pricing until the end of 2026.</li>
+              <li>QC photos and videos before balance payment.</li>
+              <li>Packaging and labels prepared for Wildberries FBO.</li>
+              <li>Weekly production and shipment status updates.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Order wave</th>
+                <th>Planned timing</th>
+                <th class="num">Quantity</th>
+                <th class="num">Amount, RUB equivalent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First order</td>
+                <td>already placed</td>
+                <td class="num">520 pcs</td>
+                <td class="num">1,998,270</td>
+              </tr>
+              <tr>
+                <td>Repeat order 1</td>
+                <td>8–12 July 2026</td>
+                <td class="num">1,020 pcs</td>
+                <td class="num">3,679,425</td>
+              </tr>
+              <tr>
+                <td>Repeat order 2</td>
+                <td>25 Aug – 5 Sep 2026</td>
+                <td class="num">860 pcs</td>
+                <td class="num">3,043,822</td>
+              </tr>
+              <tr>
+                <td>Repeat order 3</td>
+                <td>15–25 Oct 2026</td>
+                <td class="num">380 pcs</td>
+                <td class="num">1,326,698</td>
+              </tr>
+              <tr>
+                <th>2026 total</th>
+                <th></th>
+                <th class="num">2,780 pcs</th>
+                <th class="num">10,048,216</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="control">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Control points</p>
+            <h2>Календарь Решений</h2>
+            <p>
+              Этот график держит нас в регулярном цикле: сверка продаж,
+              заказ, депозит, контроль производства, оплата баланса.
+            </p>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <div class="timeline" aria-label="Контрольные точки">
+          <article>
+            <time datetime="2026-07-08">8–12 июля</time>
+            <p>Согласовать волну 2, депозит 30%, приоритетные SKU.</p>
+          </article>
+          <article>
+            <time datetime="2026-07-14">14 июля</time>
+            <p>Оплатить 70% первой китайской партии.</p>
+          </article>
+          <article>
+            <time datetime="2026-07-31">31 июля</time>
+            <p>Проверить фактическое появление первой партии на WB.</p>
+          </article>
+          <article>
+            <time datetime="2026-08-15">15 августа</time>
+            <p>Сверить Finly по WIB-250 и WIB-271.</p>
+          </article>
+          <article>
+            <time datetime="2026-08-25">25 авг – 5 сен</time>
+            <p>Разместить волну 3 под ноябрь.</p>
+          </article>
+          <article>
+            <time datetime="2026-10-15">15–25 октября</time>
+            <p>Разместить волну 4 и открыть план Q1 2027.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="page-shell">
+        <span>AID WB China Supplier Playbook · версия 1.0 · 7 июля 2026</span>
+        <a href="./aid-wb-china-supplier-playbook.md">Открыть Markdown</a>
+      </div>
+    </footer>
+  </body>
+</html>
