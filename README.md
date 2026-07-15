@@ -20,6 +20,11 @@ https://pihenella.github.io/finly-pricing-playbook/
 - [HTML-презентация](aid-wb-china-supplier-playbook.html)
 - [Markdown-документ](aid-wb-china-supplier-playbook.md)
 
+Июльский плейбук по мостовой закупке AID WB:
+
+- [HTML-страница](aid-wb-july-bridge-playbook.html)
+- [Markdown-документ](aid-wb-july-bridge-playbook.md)
+
 Плейбук по self-hosted Convex в РФ:
 
 - [HTML-страница](convex-self-hosting-russia-playbook.html)

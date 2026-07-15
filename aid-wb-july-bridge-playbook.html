@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="AID WB July Bridge Playbook: сколько докупить у старого поставщика, как пройти оплату Китая и не попасть в кассовый разрыв."
+    >
+    <title>AID WB · July Bridge Playbook</title>
+    <link rel="icon" href="./assets/mascot/nav-icon.webp" type="image/webp">
+    <link rel="stylesheet" href="./assets/aid-july-bridge-playbook.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Навигация">
+        <a href="./" class="brand">
+          <img src="./assets/mascot/nav-icon.webp" alt="" width="34" height="34">
+          <span>Finly Playbooks</span>
+        </a>
+        <div class="topbar__links">
+          <a href="./aid-wb-july-bridge-playbook.md">Markdown</a>
+          <a href="#order">Заказ</a>
+          <a href="#cash">Касса</a>
+          <a href="#controls">Контроль</a>
+        </div>
+      </nav>
+
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">AID WB · 15 июля 2026</p>
+          <h1>Мост до Китая без кассового разрыва</h1>
+          <p class="lead">
+            Китайская партия ожидается в 25-х числах июля. До её появления на
+            WB нужен короткий заказ у старого поставщика: достаточно широкий,
+            чтобы не потерять продажи, но не настолько большой, чтобы снова
+            застрять в старой себестоимости.
+          </p>
+        </div>
+
+        <aside class="decision-panel" aria-label="Главное решение">
+          <span>Решение</span>
+          <strong>Берём 278 шт. на 982 158 ₽ с оплатой через месяц.</strong>
+          <p>
+            Китай <code>1 398 789 ₽</code> оплачиваем первым. Старый долг
+            <code>340 000 ₽</code>
+            закрываем после Китая и выплаты WB. Потолок закупки с хвостами —
+            <code>1 094 330 ₽</code>.
+          </p>
+        </aside>
+      </div>
+
+      <section class="metric-strip" aria-label="Ключевые показатели">
+        <article>
+          <span>Основной заказ</span>
+          <strong>278 шт.</strong>
+          <p>982 158 ₽, рабочий мост до начала августа</p>
+        </article>
+        <article>
+          <span>Китай</span>
+          <strong>1 398 789 ₽</strong>
+          <p>главный платёж в 25-х числах июля</p>
+        </article>
+        <article>
+          <span>Старый долг</span>
+          <strong>340 000 ₽</strong>
+          <p>закрываем после платежа Китаю</p>
+        </article>
+        <article>
+          <span>Касса после плана</span>
+          <strong>~891 000 ₽</strong>
+          <p>после заказа и операционного запаса 310 000 ₽</p>
+        </article>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="answer">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Короткий ответ</p>
+              <h2>Что делаем сейчас</h2>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="plain-text">
+            <p>
+              Размещаем у старого поставщика рабочий мост:
+              <strong>278 шт. / 982 158 ₽</strong>. Оплата — через месяц,
+              ориентир <strong>14–15 августа 2026</strong>.
+            </p>
+            <p>
+              Если нужно закрыть мелкие хвосты по SKU, которые уже дают нулевой
+              остаток, можно добавить ещё <strong>31 шт. / 112 172 ₽</strong>.
+              Тогда общий потолок заказа — <strong>309 шт. / 1 094 330 ₽</strong>.
+            </p>
+          </div>
+
+          <div class="callout">
+            <p>
+              <strong>Выше 1,1 млн ₽ сейчас не идти.</strong> Это уже будет не
+              мост, а возврат к старой модели закупки перед приходом Китая.
+            </p>
+          </div>
+
+          <div class="two-column">
+            <article class="cash-card">
+              <span>Почему не минимум</span>
+              <strong>569 тыс. ₽ — слишком тонко</strong>
+              <p>
+                Минимальная закупка технически закрывает часть дыры, но почти
+                не оставляет запаса на задержку приёмки Китая и всплеск продаж.
+              </p>
+            </article>
+            <article class="cash-card">
+              <span>Почему не больше</span>
+              <strong>1,1 млн ₽ — верхняя граница</strong>
+              <p>
+                Китай остаётся основной поставкой. Старый поставщик нужен как
+                короткая страховка, а не как новый большой цикл.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="inputs">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Вводные</p>
+              <h2>От чего считаем</h2>
+              <p>
+                Данные взяты из Finli production export от 15 июля 2026 по
+                WB-магазинам <code>AID Official</code> и <code>AID Tools</code>.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Вводная</th>
+                  <th scope="col" class="num">Значение</th>
+                  <th scope="col">Как учитываем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Китайская партия</td>
+                  <td class="num">25-е числа июля</td>
+                  <td>В продажах на WB закладываем осторожно: конец июля — начало августа.</td>
+                </tr>
+                <tr>
+                  <td>Долг Китаю</td>
+                  <td class="num">1 398 789 ₽</td>
+                  <td>Главный платёж. До него не делаем крупных лишних выплат.</td>
+                </tr>
+                <tr>
+                  <td>Долг старому поставщику</td>
+                  <td class="num">340 000 ₽</td>
+                  <td>Закрываем после Китая и выплаты WB 28 июля.</td>
+                </tr>
+                <tr>
+                  <td>Отсрочка старого поставщика</td>
+                  <td class="num">1 месяц</td>
+                  <td>Новый заказ можно разместить сейчас, а оплатить в августе.</td>
+                </tr>
+                <tr>
+                  <td>Деньги на счетах по Finli</td>
+                  <td class="num">1 253 218,37 ₽</td>
+                  <td>Стартовая касса на дату расчёта.</td>
+                </tr>
+                <tr>
+                  <td>Резерв</td>
+                  <td class="num">300 000 ₽</td>
+                  <td>Не трогаем без аварийной причины.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <p>
+              Остатки WB последний раз успешно обновились 14 июля. После этого
+              WB временно ограничил обновление остатков, поэтому из текущего
+              stock дополнительно вычтены заказы после последнего stock-sync.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="stock">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Остатки и спрос</p>
+              <h2>Где риск out of stock</h2>
+              <p>
+                Здесь показано, на сколько дней хватает товара без нового
+                заказа. Чем меньше покрытие, тем выше приоритет в закупке.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Артикул</th>
+                  <th scope="col" class="num">Эфф. остаток</th>
+                  <th scope="col" class="num">Темп/день</th>
+                  <th scope="col" class="num">Покрытие</th>
+                  <th scope="col" class="num">Китай</th>
+                  <th scope="col">Вывод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>WIB-276</code></td>
+                  <td class="num">71 шт.</td>
+                  <td class="num">5,63</td>
+                  <td class="num">12,6 дня</td>
+                  <td class="num">120 шт.</td>
+                  <td>Главный оборот, обязательно поддержать.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-233</code></td>
+                  <td class="num">55 шт.</td>
+                  <td class="num">5,14</td>
+                  <td class="num">10,7 дня</td>
+                  <td class="num">80 шт.</td>
+                  <td>Темп резко вырос, нужен запас.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-277</code></td>
+                  <td class="num">22 шт.</td>
+                  <td class="num">1,90</td>
+                  <td class="num">11,6 дня</td>
+                  <td class="num">80 шт.</td>
+                  <td>Короткое покрытие до Китая.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-246</code></td>
+                  <td class="num">15 шт.</td>
+                  <td class="num">0,86</td>
+                  <td class="num">17,5 дня</td>
+                  <td class="num">0 шт.</td>
+                  <td>Китая по SKU нет, нужен мост.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-274</code></td>
+                  <td class="num">0 шт.</td>
+                  <td class="num">0,37</td>
+                  <td class="num">0 дней</td>
+                  <td class="num">0 шт.</td>
+                  <td>Уже ноль, но берём аккуратно.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-270</code></td>
+                  <td class="num">2 шт.</td>
+                  <td class="num">0,33</td>
+                  <td class="num">6 дней</td>
+                  <td class="num">80 шт.</td>
+                  <td>Маленькая страховка до Китая.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-280</code></td>
+                  <td class="num">6 шт.</td>
+                  <td class="num">0,33</td>
+                  <td class="num">18 дней</td>
+                  <td class="num">0 шт.</td>
+                  <td>Китая нет, но спрос умеренный.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-250</code></td>
+                  <td class="num">3 шт.</td>
+                  <td class="num">0,29</td>
+                  <td class="num">10,5 дня</td>
+                  <td class="num">80 шт.</td>
+                  <td>Нужна маленькая страховка.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-271</code></td>
+                  <td class="num">0 шт.</td>
+                  <td class="num">0,17</td>
+                  <td class="num">0 дней</td>
+                  <td class="num">80 шт.</td>
+                  <td>Берём мало, потому что Китай скоро усилит SKU.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="order">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Заказ</p>
+              <h2>Что докупить у старого поставщика</h2>
+              <p>
+                Это рабочий заказ, а не максимальная закупка. Он закрывает
+                риск до начала августа и оставляет Китай основной поставкой.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Артикул</th>
+                  <th scope="col" class="num">Дозаказать</th>
+                  <th scope="col" class="num">Себестоимость</th>
+                  <th scope="col" class="num">Сумма</th>
+                  <th scope="col">Зачем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>WIB-276</code></td>
+                  <td class="num">98 шт.</td>
+                  <td class="num">3 923 ₽</td>
+                  <td class="num">384 454 ₽</td>
+                  <td>Главный оборот, короткое покрытие.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-233</code></td>
+                  <td class="num">100 шт.</td>
+                  <td class="num">1 717 ₽</td>
+                  <td class="num">171 700 ₽</td>
+                  <td>Темп вырос, нужен запас.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-277</code></td>
+                  <td class="num">35 шт.</td>
+                  <td class="num">4 537 ₽</td>
+                  <td class="num">158 795 ₽</td>
+                  <td>Держим продажи до Китая.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-274</code></td>
+                  <td class="num">11 шт.</td>
+                  <td class="num">7 284 ₽</td>
+                  <td class="num">80 124 ₽</td>
+                  <td>Сейчас ноль, Китая по SKU нет.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-270</code></td>
+                  <td class="num">8 шт.</td>
+                  <td class="num">8 147 ₽</td>
+                  <td class="num">65 176 ₽</td>
+                  <td>Маленькая страховка до Китая.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-271</code></td>
+                  <td class="num">5 шт.</td>
+                  <td class="num">8 463 ₽</td>
+                  <td class="num">42 315 ₽</td>
+                  <td>Сейчас ноль, но в Китае будет 80 шт.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-280</code></td>
+                  <td class="num">4 шт.</td>
+                  <td class="num">7 908 ₽</td>
+                  <td class="num">31 632 ₽</td>
+                  <td>Поддержать до новой отгрузки.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-246</code></td>
+                  <td class="num">11 шт.</td>
+                  <td class="num">2 432 ₽</td>
+                  <td class="num">26 752 ₽</td>
+                  <td>Китая по SKU нет, нужен мост.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-250</code></td>
+                  <td class="num">6 шт.</td>
+                  <td class="num">3 535 ₽</td>
+                  <td class="num">21 210 ₽</td>
+                  <td>Маленькая страховка до Китая.</td>
+                </tr>
+                <tr class="total-row">
+                  <th scope="row">Итого</th>
+                  <td class="num">278 шт.</td>
+                  <td></td>
+                  <td class="num">982 158 ₽</td>
+                  <td>Оплата через месяц.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <p>
+              Если поставщик собирает быстро и это не двигает срок отгрузки,
+              можно добавить хвосты на <strong>31 шт. / 112 172 ₽</strong>.
+              Тогда общий потолок — <strong>1 094 330 ₽</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="drafts">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Важная проверка</p>
+              <h2>Что делать с «Не запланировано»</h2>
+              <p>
+                В Finli видны черновые WB-поставки. Пока они не подтверждены
+                физически, они не считаются товаром в пути.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Артикул</th>
+                  <th scope="col" class="num">В статусе <code>Не запланировано</code></th>
+                  <th scope="col">Что делать</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>WIB-276</code></td>
+                  <td class="num">80 шт.</td>
+                  <td>Если товар физически есть, срочно планировать отгрузку.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-277</code></td>
+                  <td class="num">34 шт.</td>
+                  <td>Если есть, не покупать повторно.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-233</code></td>
+                  <td class="num">28 шт.</td>
+                  <td>Даже с ними остаётся потребность в доборе.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-246</code></td>
+                  <td class="num">8 шт.</td>
+                  <td>Уменьшает заказ по SKU почти полностью.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-270</code></td>
+                  <td class="num">10 шт.</td>
+                  <td>Если есть, новый добор по SKU не нужен.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-271</code></td>
+                  <td class="num">6 шт.</td>
+                  <td>Если есть, новый добор по SKU не нужен.</td>
+                </tr>
+                <tr>
+                  <td><code>WIB-280</code></td>
+                  <td class="num">13 шт.</td>
+                  <td>Если есть, новый добор по SKU не нужен.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <p>
+              Если эти позиции физически уже есть у старого поставщика или на
+              фулфилменте, покупку ядра можно уменьшить до
+              <strong>111 шт. / 307 405 ₽</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="cash">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Касса</p>
+              <h2>Как не попасть в разрыв</h2>
+              <p>
+                Отсрочка старого поставщика даёт возможность разместить заказ
+                сейчас, а оплатить его после Китая и выплат WB начала августа.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Дата</th>
+                  <th scope="col">Действие</th>
+                  <th scope="col" class="num">Денежный эффект</th>
+                  <th scope="col" class="num">Остаток</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>15 июля</td>
+                  <td>Стартовая касса</td>
+                  <td class="num"></td>
+                  <td class="num">1 253 218 ₽</td>
+                </tr>
+                <tr>
+                  <td>21 июля</td>
+                  <td>Ожидаем WB-выплату</td>
+                  <td class="num">+775 385 ₽</td>
+                  <td class="num">2 028 603 ₽</td>
+                </tr>
+                <tr>
+                  <td>25-е числа июля</td>
+                  <td>Платим Китай</td>
+                  <td class="num">−1 398 789 ₽</td>
+                  <td class="num">629 814 ₽</td>
+                </tr>
+                <tr>
+                  <td>28 июля</td>
+                  <td>Ожидаем WB-выплату</td>
+                  <td class="num">+539 841 ₽</td>
+                  <td class="num">1 169 655 ₽</td>
+                </tr>
+                <tr>
+                  <td>28 июля</td>
+                  <td>Закрываем долг старому поставщику</td>
+                  <td class="num">−340 000 ₽</td>
+                  <td class="num">829 655 ₽</td>
+                </tr>
+                <tr>
+                  <td>4 августа</td>
+                  <td>Ожидаем WB-выплату</td>
+                  <td class="num">+739 999 ₽</td>
+                  <td class="num">1 569 654 ₽</td>
+                </tr>
+                <tr>
+                  <td>11 августа</td>
+                  <td>Ожидаем WB-выплату</td>
+                  <td class="num">+613 525 ₽</td>
+                  <td class="num">2 183 179 ₽</td>
+                </tr>
+                <tr>
+                  <td>14–15 августа</td>
+                  <td>Платим новый заказ старому поставщику</td>
+                  <td class="num">−982 158 ₽</td>
+                  <td class="num">1 201 021 ₽</td>
+                </tr>
+                <tr class="total-row">
+                  <th scope="row">После операционного запаса</th>
+                  <td>ФОТ, фулфилмент, прочие расходы</td>
+                  <td class="num">−310 000 ₽</td>
+                  <td class="num">~891 000 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <p>
+              Главное правило кассы: сначала Китай, потом старый долг, потом
+              новый мост. Новый заказ старому поставщику не оплачиваем раньше
+              августа.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rules">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Правила</p>
+              <h2>Что не делаем</h2>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="two-column">
+            <article class="rule-list">
+              <span>Ограничения</span>
+              <ol>
+                <li>Не платим старый долг <code>340 000 ₽</code> до оплаты Китая, если это не обязательно.</li>
+                <li>Не оплачиваем новый заказ старому поставщику раньше августа.</li>
+                <li>Не закупаем у старого поставщика больше <code>1,1 млн ₽</code> без новой сверки Finli.</li>
+              </ol>
+            </article>
+            <article class="rule-list">
+              <span>Логика</span>
+              <ol>
+                <li>Не считаем статус <code>Не запланировано</code> товаром в пути без физического подтверждения.</li>
+                <li>Не делаем повторный крупный заказ у старого после прихода Китая.</li>
+                <li>Китай остаётся основной поставкой, старый поставщик — только мостом.</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="controls">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Контрольные точки</p>
+              <h2>Когда принимать решения</h2>
+              <p>
+                Эти проверки нужны, чтобы не купить лишнее и не сдвинуть
+                главный платёж Китаю.
+              </p>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="timeline" aria-label="Контрольные точки">
+            <article>
+              <time>15–16 июля</time>
+              <div>
+                <strong>Проверить <code>Не запланировано</code></strong>
+                <p>Понять, какие позиции физически существуют и готовы к отгрузке.</p>
+              </div>
+              <div class="amount">снижает заказ</div>
+            </article>
+            <article>
+              <time>15–16 июля</time>
+              <div>
+                <strong>Подтвердить месячную отсрочку</strong>
+                <p>Зафиксировать, что новый заказ оплачивается в августе.</p>
+              </div>
+              <div class="amount">без кассового риска</div>
+            </article>
+            <article>
+              <time>21 июля</time>
+              <div>
+                <strong>Проверить WB-выплату</strong>
+                <p>Если выплата не пришла, не трогаем долг старому поставщику.</p>
+              </div>
+              <div class="amount">775 385 ₽</div>
+            </article>
+            <article>
+              <time>25-е числа июля</time>
+              <div>
+                <strong>Оплатить Китай</strong>
+                <p>Это главный платёж. Остальные крупные выплаты подстраиваются под него.</p>
+              </div>
+              <div class="amount">1 398 789 ₽</div>
+            </article>
+            <article>
+              <time>28 июля</time>
+              <div>
+                <strong>Закрыть старый долг</strong>
+                <p>Делаем это после выплаты WB и после оплаты Китая.</p>
+              </div>
+              <div class="amount">340 000 ₽</div>
+            </article>
+            <article>
+              <time>14–15 августа</time>
+              <div>
+                <strong>Оплатить новый мост</strong>
+                <p>К этому моменту должны пройти выплаты WB начала августа.</p>
+              </div>
+              <div class="amount">982 158 ₽</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="summary">
+        <div class="section__inner">
+          <div class="section__heading">
+            <div>
+              <p class="kicker">Итог</p>
+              <h2>Финальная тактика</h2>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+          <div class="plain-text">
+            <p>
+              Сейчас берём у старого поставщика <strong>278 шт. / 982 158 ₽</strong>.
+              Оплата только через месяц. Китай <code>1 398 789 ₽</code> — главный платёж,
+              его не трогаем. Старый долг <code>340 000 ₽</code> закрываем после оплаты
+              Китая и WB-выплаты 28 июля.
+            </p>
+            <p>
+              Если черновые поставки WB физически уже есть, уменьшаем заказ до
+              <strong>111 шт. / 307 405 ₽</strong>. Потолок с хвостами —
+              <strong>1 094 330 ₽</strong>. Выше <code>1,1 млн ₽</code> без новой сверки
+              Finli не идём.
+            </p>
+          </div>
+
+          <div class="callout">
+            <p>
+              <strong>Главная идея:</strong> старый поставщик — короткий мост,
+              Китай — основная поставка. Кассу держим так, чтобы сначала пройти
+              Китай, потом закрыть старого, потом оплатить новый мост.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>Finly Playbooks · AID WB July Bridge</span>
+        <span>
+          <a href="./aid-wb-july-bridge-playbook.md">Markdown</a>
+          ·
+          <a href="./wb-china-fbo-playbook.html">старый майский плейбук</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
